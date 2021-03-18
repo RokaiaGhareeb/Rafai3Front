@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MyproductsService } from 'src/services/myproducts/myproducts.service';
 
 @Component({
   selector: 'app-promotion-card',
@@ -7,13 +8,35 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PromotionCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productServ:MyproductsService) { }
+
+  subscriber;
 
   ngOnInit(): void {
 
-    console.log('ssss',this.promotion)
+    console.log(this.promotion)
+   this.subscriber= this.productServ.getProductById(this.promotion.productId).subscribe(
+
+      (data)=>{
+
+        this.productDetails=data;
+        console.log(this.productDetails)
+
+
+      },
+      (err)=>{
+
+        console.log(err)
+      },
+      ()=>{
+
+        this.subscriber.unsubscribe()
+      }
+    )
   }
 
   @Input() promotion;
+
+  productDetails;
 
 }
