@@ -37,12 +37,16 @@
             
  
             </table>
-            <strong class="mx-3">If rejected. Reason for rejection:</strong>
-            <div style="display: inline;" class="text-center"><input #reject class="shadow p-3 mb-5 bg-white rounded"  type="text"></div>
-            <strong class="mx-3"> Order will be delivered in </strong>
-            <div style="display: inline;" class="text-center"><input #accept class="shadow p-3 mb-5 bg-white rounded"  type="text"></div>
-            <strong class="mx-3">Days </strong>
-            <h5 class="text-danger text-center">{{messageIncluded}}</h5>
+
+            <div class="text-center">
+
+              <strong class="mx-3">Reason for rejection:</strong>
+              <div style="display: inline;" class="text-center"><input #reject class="shadow p-3 mb-5 bg-white rounded"  type="text"></div>
+              <br>
+              <strong class="mx-3"> Order will be delivered at date </strong>
+              <div style="display: inline;" class="text-center"><input #accept class="shadow p-3 mb-5 bg-white rounded"  type="date"></div>
+              <h5 class="text-danger text-center">{{messageIncluded}}</h5>
+            </div>
           </div>
           <!-- End -->
         </div>

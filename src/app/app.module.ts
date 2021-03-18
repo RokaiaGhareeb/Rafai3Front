@@ -22,6 +22,8 @@ import { MakeOrderComponent } from './components/orders-Components/make-order/ma
 import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
 import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
 import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
+import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { AdminControlOrdersSubComponentComponent } from './components/orders/ord
     MakeOrderComponent,
     AdminControlOrdersComponent,
     UserViewOrdersComponent,
-    AdminControlOrdersSubComponentComponent
+    AdminControlOrdersSubComponentComponent,
+    UserViewOrdersSubComponentComponent
 
   ],
   imports: [

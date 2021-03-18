@@ -36,9 +36,11 @@ export class AdminControlOrdersSubComponentComponent implements OnInit {
       return
   }
 
+  
+
   this.messageIncluded='';
   
-    _deliveredDuration='Order will be delivered in '+_deliveredDuration+' days'
+    _deliveredDuration='Order will be delivered at '+_deliveredDuration
    this.subscriber= this.orderServ.adminAcceptOrder(this.orderDetails._id,_deliveredDuration).subscribe(
 
       (data)=>{
