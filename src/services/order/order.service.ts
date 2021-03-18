@@ -67,6 +67,11 @@ export class OrderService {
    return this._httpClient.patch(this.baseUrl+'/'+_orderId+'/status',{status:'rejected',statusmessage:_rejectionReason},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
   }
 
+  // get order details by its Id
+  getOrderDetailsById(_orderId){
+
+    return this._httpClient.get(this.baseUrl+'/'+_orderId,{headers:{Authorization:this.getToken()}})
+  }
 
 
   // getAllOrders(){
