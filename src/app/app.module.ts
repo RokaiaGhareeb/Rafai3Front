@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PromotionCardComponent } from './components/promotion-card/promotion-card.component';
@@ -23,6 +23,7 @@ import { AdminControlOrdersComponent } from './components/orders/orders-admin-co
 import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
 import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
 import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
+import { UserService } from 'src/services/user/user.service';
 
 
 
@@ -52,9 +53,10 @@ import { UserViewOrdersSubComponentComponent } from './components/orders/user-vi
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [OrderService],
+  providers: [OrderService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
