@@ -37,6 +37,12 @@ export class PromotionService {
     return this._httpClient.patch(this.baseUrl+'/'+_productId,_promotionDetails,{headers:{Authorization:this.getToken()}})
   }
 
+  // get promotion that made on definite product by its id
+  getPromotionByProductId(_productId){
+
+    return this._httpClient.get(this.baseUrl+'/'+_productId);
+  }
+
 
   // delete promotion by promotion id
   deletePromotion(_promotionId){
