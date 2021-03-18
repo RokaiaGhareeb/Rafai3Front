@@ -55,16 +55,16 @@ export class OrderService {
 
 
   // change status of order by its id  .. depending on button status will be accepted 
-  adminAcceptOrder(_orderId){
+  adminAcceptOrder(_orderId,_deliveredDuration){
 
-   return this._httpClient.patch(this.baseUrl+'/'+_orderId+'/status',{status:'accepted'},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
+   return this._httpClient.patch(this.baseUrl+'/'+_orderId+'/status',{status:'accepted',statusmessage:_deliveredDuration},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
   }
 
 
   // change status of order by its id  .. depending on button status will be  rejected 
-  adminRejectOrder(_orderId){
+  adminRejectOrder(_orderId,_rejectionReason){
 
-   return this._httpClient.patch(this.baseUrl+'/'+_orderId+'/status',{status:'rejected'},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
+   return this._httpClient.patch(this.baseUrl+'/'+_orderId+'/status',{status:'rejected',statusmessage:_rejectionReason},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
   }
 
 

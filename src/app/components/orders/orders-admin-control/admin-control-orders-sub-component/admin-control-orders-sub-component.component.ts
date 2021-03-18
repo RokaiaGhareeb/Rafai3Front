@@ -24,10 +24,22 @@ export class AdminControlOrdersSubComponentComponent implements OnInit {
 
   subscriber;
 
-  // pass param to function accept order accepted
-  acceptOrder(){
 
-   this.subscriber= this.orderServ.adminAcceptOrder(this.orderDetails._id).subscribe(
+  // should include message for accept or reject
+  messageIncluded='';
+
+  // pass param to function accept order accepted
+  acceptOrder(_deliveredDuration){
+
+    if(_deliveredDuration==''){ 
+      this.messageIncluded='Should write when it will be delivered' 
+      return
+  }
+
+  this.messageIncluded='';
+  
+    _deliveredDuration='Order will be delivered in '+_deliveredDuration+' days'
+   this.subscriber= this.orderServ.adminAcceptOrder(this.orderDetails._id,_deliveredDuration).subscribe(
 
       (data)=>{
 
@@ -47,9 +59,17 @@ export class AdminControlOrdersSubComponentComponent implements OnInit {
 
   // pass param to function accept order accepted
 
-  rejectOrder(){
+  rejectOrder(_rejectionReason){
 
-    this.subscriber= this.orderServ.adminRejectOrder(this.orderDetails._id).subscribe(
+    if(_rejectionReason==''){ 
+      this.messageIncluded='Should write why order was rejected' 
+      return
+  }
+
+  this.messageIncluded='';
+
+
+    this.subscriber= this.orderServ.adminRejectOrder(this.orderDetails._id,_rejectionReason).subscribe(
 
       (data)=>{
 

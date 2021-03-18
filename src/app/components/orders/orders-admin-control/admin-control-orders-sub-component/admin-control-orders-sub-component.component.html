@@ -27,14 +27,22 @@
                   <td class="border-0 align-middle"><strong>{{orderDetails.totalprice}}</strong></td>
                   <td class="border-0 align-middle"><strong>{{createdAt}}</strong></td>
                   <td [ngClass]="{'text-success': orderDetails.status === 'accepted', 'text-danger':orderDetails.status === 'rejected' }" class="border-0 align-middle"><strong>{{orderDetails.status}}</strong></td>
-                  <td class="border-0 align-middle"><input (click)="acceptOrder()" type="button" value="Accept" class="btn btn-success"></td>
-                  <td class="border-0 align-middle"><input (click)="rejectOrder()" type="button" value="Reject" class="btn btn-danger"></td>
+                  <td class="border-0 align-middle"><input (click)="acceptOrder(accept.value)" type="button" value="Accept" class="btn btn-success"></td>
+                  <td class="border-0 align-middle"><input (click)="rejectOrder(reject.value)" type="button" value="Reject" class="btn btn-danger"></td>
 
     
               
                 </tr> 
+
+            
  
             </table>
+            <strong class="mx-3">If rejected. Reason for rejection:</strong>
+            <div style="display: inline;" class="text-center"><input #reject class="shadow p-3 mb-5 bg-white rounded"  type="text"></div>
+            <strong class="mx-3"> Order will be delivered in </strong>
+            <div style="display: inline;" class="text-center"><input #accept class="shadow p-3 mb-5 bg-white rounded"  type="text"></div>
+            <strong class="mx-3">Days </strong>
+            <h5 class="text-danger text-center">{{messageIncluded}}</h5>
           </div>
           <!-- End -->
         </div>
