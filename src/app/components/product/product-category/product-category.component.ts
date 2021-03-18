@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-category',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCategoryComponent implements OnInit {
 
-  constructor() { }
-
+  categoryFilter;
+  constructor() {
+  }
   ngOnInit(): void {
+
   }
 
+  onEmitt(value){
+    this.categoryFilter = value;
+  }
 }
