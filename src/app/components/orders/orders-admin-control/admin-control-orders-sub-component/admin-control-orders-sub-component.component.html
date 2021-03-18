@@ -1,0 +1,44 @@
+
+
+<!-- <ul  *ngIf="allOrders" >
+    <li *ngFor="let order of allOrders">
+
+        <app-admin-control-orders-sub-component [orderDetails]="order"></app-admin-control-orders-sub-component>
+    </li>
+</ul> -->
+
+
+
+<div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              
+         
+                <tr >
+            
+                  
+                  <td class="border-0 align-middle"><strong>{{orderDetails._id}}</strong></td>
+                  <td class="border-0 align-middle"><strong>{{orderDetails.totalquantity}}</strong></td>
+                  <td class="border-0 align-middle"><strong>{{orderDetails.totalprice}}</strong></td>
+                  <td class="border-0 align-middle"><strong>{{createdAt}}</strong></td>
+                  <td [ngClass]="{'text-success': orderDetails.status === 'accepted', 'text-danger':orderDetails.status === 'rejected' }" class="border-0 align-middle"><strong>{{orderDetails.status}}</strong></td>
+                  <td class="border-0 align-middle"><input (click)="acceptOrder()" type="button" value="Accept" class="btn btn-success"></td>
+                  <td class="border-0 align-middle"><input (click)="rejectOrder()" type="button" value="Reject" class="btn btn-danger"></td>
+
+    
+              
+                </tr> 
+ 
+            </table>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+
+      </div>
+ </div>

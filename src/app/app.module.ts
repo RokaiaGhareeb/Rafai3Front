@@ -15,6 +15,14 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 
+import{HttpClientModule} from '@angular/common/http'
+import { OrderService } from 'src/services/order/order.service';
+import { OrdersComponent } from './components/orders-Components/user-orders/orders.component';
+import { MakeOrderComponent } from './components/orders-Components/make-order/make-order.component';
+import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
+import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
+import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
+
 
 @NgModule({
   declarations: [
@@ -31,13 +39,19 @@ import { ProductCategoryComponent } from './components/product-category/product-
     HomeComponent,
     ProfileComponent,
     ProductCategoryComponent,
+    OrdersComponent,
+    MakeOrderComponent,
+    AdminControlOrdersComponent,
+    UserViewOrdersComponent,
+    AdminControlOrdersSubComponentComponent
 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
