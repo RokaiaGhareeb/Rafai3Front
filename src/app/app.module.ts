@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,6 +19,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProductCategoryComponent } from './components/product/product-category/product-category.component';
 import { CategoryMenuComponent } from './components/product/category-menu/category-menu.component';
 import { ProductHeaderComponent } from './components/product/product-header/product-header.component';
+import { OrderService } from 'src/services/order/order.service';
+import { UserService } from 'src/services/user/user.service';
 
 const appRoutes : Routes = [
   {path:'', redirectTo:'product/kitchen', pathMatch:'full'},
@@ -54,9 +56,10 @@ const appRoutes : Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [OrderService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/services/user/user.service';
+import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class AdminLoginComponent implements OnInit {
 
-  constructor(private userServ:UserService) { }
+  // inject admin service
+  constructor(private adminServ:AdminService) { 
+
+  }
 
   ngOnInit(): void {
   }
-
-
 
   ngOnDestroy(): void {
 
@@ -30,7 +31,6 @@ export class LoginFormComponent implements OnInit {
 
   faliedLogin: string = "";
 
-
   firstLoginClick=false;
 
   login(_user, _pass) {
@@ -39,9 +39,9 @@ export class LoginFormComponent implements OnInit {
 
     const loginUserInfo = { username: _user.value, password: _pass.value }
 
-    console.log(loginUserInfo)
+   // console.log(loginUserInfo)
 
-    this.subscriber = this.userServ.login(loginUserInfo).subscribe(
+    this.subscriber = this.adminServ.login(loginUserInfo).subscribe(
 
       (data) => {
         console.log(data)
@@ -68,8 +68,6 @@ export class LoginFormComponent implements OnInit {
     )
 
   }
-
-
 
 
 }
