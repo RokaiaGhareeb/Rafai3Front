@@ -24,6 +24,8 @@ import { UserViewOrdersComponent } from './components/orders/user-view-orders/us
 import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
 import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
 import { UserService } from 'src/services/user/user.service';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+
 
 
 
@@ -47,7 +49,8 @@ import { UserService } from 'src/services/user/user.service';
     AdminControlOrdersComponent,
     UserViewOrdersComponent,
     AdminControlOrdersSubComponentComponent,
-    UserViewOrdersSubComponentComponent
+    UserViewOrdersSubComponentComponent,
+    AdminLoginComponent
 
   ],
   imports: [

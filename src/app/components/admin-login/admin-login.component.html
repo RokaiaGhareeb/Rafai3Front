@@ -11,7 +11,7 @@
                 <h5>Enter yoour username</h5>
             </label>
             <input #username class="form-control w-50 m-auto " name="username" id="" formControlName="username">
-            <div name="validations" *ngIf="loginForm.invalid&&firstLoginClick">
+            <div name="validations" *ngIf="firstLoginClick&&loginForm.invalid">
                 <span class="text-danger" *ngIf="loginForm.controls.username.errors?.required">Username is
                     required</span>
                 <span class="text-danger" *ngIf="loginForm.controls.username.errors?.maxlength">username characters
@@ -28,7 +28,7 @@
             </label>
             <input type="password" #password class="form-control w-50 m-auto" formControlName="password"
                 name="password">
-            <div name="validations" *ngIf="loginForm.invalid&&firstLoginClick">
+            <div name="validations" *ngIf="firstLoginClick&&loginForm.invalid">
                 <span class="text-danger" *ngIf="loginForm.controls.password.errors?.required">password is
                     required</span>
                 <span class="text-danger" *ngIf="loginForm.controls.password.errors?.maxlength">password characters
