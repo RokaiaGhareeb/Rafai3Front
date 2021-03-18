@@ -44,9 +44,10 @@
 
       </div>
  </div>
-<div class="text-center">
+ <div class="text-center">
+  <input #specificDate type="date" name="startDate" id="">
+  <input type="button" class="btn btn-primary mx-2" value="search by specific day" (click)="searchBySpecificDate(specificDate)">
   <input #startDate type="date" name="startDate" id="">
-  <input type="button" class="btn btn-primary mx-2" value="search by specific day" (click)="searchBySpecificDate(startDate)">
   <input #endDate type="date" name="endDate" id="">
   <input type="button" class="btn btn-primary mx-2" value="search by start and end date" (click)="searchByDateRange(startDate,endDate)">
 
