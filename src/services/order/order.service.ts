@@ -74,6 +74,19 @@ export class OrderService {
   }
 
 
+
+  searchOrderBySpecificDate(_searchDetails){
+
+    return this._httpClient.get(this.baseUrl+'?startDate='+_searchDetails.startDate+'&endDate='+_searchDetails.endDate,{headers:{Authorization:this.getToken()}})
+  }
+
+
+  searchOrderByRangeDate(_searchDetails){
+
+    return this._httpClient.get(this.baseUrl+'?startDate='+_searchDetails.startDate+'&endDate='+_searchDetails.endDate,{headers:{Authorization:this.getToken()}})
+  }
+
+
   // getAllOrders(){
 
   // //  let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTBhOTE1MGNmMDdjZDMwMWI0NDhmOSIsImlhdCI6MTYxNTkzNzYwN30.Nu8mWuzIzeId8kg5jaCvDGhqCcqzO3n30Bmd4cIgCG4"
