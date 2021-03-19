@@ -49,32 +49,50 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item active">
-          <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor"
+          <a *ngIf="!checkIfAdmin" class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger"
             routerLink="home" class="nav-link" aria-current="home">Home</a>
+        </li>
+
+
+        <li class="nav-item active">
+          <a *ngIf="checkIfAdmin" class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger"
+            routerLink="product" class="nav-link" >All products</a>
+        </li>
+        <li class="nav-item active">
+          <a *ngIf="checkIfAdmin" class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger"
+            routerLink="" class="nav-link" >Add product</a>
+        </li>
+        <li class="nav-item active">
+          <a *ngIf="checkIfAdmin" class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger"
+            routerLink="" class="nav-link" >Remove product</a>
+        </li>
+        <li class="nav-item active">
+          <a *ngIf="checkIfAdmin" class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger"
+            routerLink="admin/order" class="nav-link" >Orders</a>
         </li>
         
   
         <li class="nav-item dropdown">
-          <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="product"
+          <a *ngIf="!checkIfAdmin" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="product"
             class="nav-link">our products</a>
         </li>
 
         <li class="nav-item dropdown">
          
 
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+            <a *ngIf="!checkIfAdmin" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
                 Cart
               </a>
-              <div style="background-color: rgb(153, 155, 132);" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="user/cart" href="#">MY Cart</a>
-                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="user/order" href="#">My Orders</a>
+              <div *ngIf="!checkIfAdmin" style="background-color: rgb(153, 155, 132);" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="user/cart" href="#">MY Cart</a>
+                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="user/order" href="#">My Orders</a>
                 
                
               </div>
         </li>
 
         <li class="nav-item">
-            <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="user/profile"
+            <a *ngIf="!checkIfAdmin" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="user/profile"
               class="nav-link">profile</a>
           </li>
       </ul>
@@ -83,18 +101,18 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         class="btn btn-outline-success"
         style="color: white; border: 2px solid white"
         type="submit"  [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="pageFontColor" routerLink="user/login"
+        routerLinkActive="text-danger" routerLink="user/login"
       >
-        Log in
+      <span>  Log in</span>
       </button>
 
-         <button
+         <button *ngIf="!checkIfAdmin"
         class="btn btn-outline-success"
         style="color: white; border: 2px solid white"
         type="submit"  [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="pageFontColor" routerLink="user/register"
+        routerLinkActive="text-danger" routerLink="user/register"
       >
-        Register
+      <span *ngIf="!checkIfAdmin">  Register</span>
       </button>
       </div>
       <div class="form-inline my-2 my-lg-0 text-primary" >

@@ -13,14 +13,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // console.log(this.router.url.startsWith('/admin'))
-    // console.log(this.router.url=='/admin')
+  // check if 
+ this.checkIfAdmin= window.location.href.includes('admin')
+
+ console.log(this.checkIfAdmin)
 
 
   }
 
 
-  checkUserOrAdmin;
+  checkIfAdmin=false;
 
 
 
