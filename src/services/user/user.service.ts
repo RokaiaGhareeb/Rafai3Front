@@ -10,7 +10,7 @@ export class UserService {
 
    }
 
-   private baseUrl='http://localhost:3000/api/user';
+   private baseUrl='https://rafai3-backend.herokuapp.com/api/user';
 
    register(_signUpDetails){
 

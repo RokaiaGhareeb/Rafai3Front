@@ -12,7 +12,7 @@ export class MyproductsService {
   }
 
 
-  private baseUrl='http://localhost:3000/api/product'
+  private baseUrl='https://rafai3-backend.herokuapp.com/api/product'
 
 
   // get all products

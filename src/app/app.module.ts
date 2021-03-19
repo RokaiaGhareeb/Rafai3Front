@@ -21,13 +21,9 @@ import { CategoryMenuComponent } from './components/product/category-menu/catego
 import { ProductHeaderComponent } from './components/product/product-header/product-header.component';
 import { OrderService } from 'src/services/order/order.service';
 import { UserService } from 'src/services/user/user.service';
-<<<<<<< HEAD
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
-import { AppRoutingModule } from './modules/app-routing.module';
 
-=======
->>>>>>> facb4e61ed0186fc6f19333a939c166194ca61d6
 
 const appRoutes : Routes = [
   {path:'', redirectTo:'product/kitchen', pathMatch:'full'},
@@ -58,18 +54,15 @@ const appRoutes : Routes = [
     ProductCategoryComponent,
     CategoryMenuComponent,
     ProductHeaderComponent,
+    AdminLoginComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-<<<<<<< HEAD
-    ReactiveFormsModule,
-    AppRoutingModule
-=======
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule
->>>>>>> facb4e61ed0186fc6f19333a939c166194ca61d6
   ],
   providers: [OrderService,UserService],
   bootstrap: [AppComponent]

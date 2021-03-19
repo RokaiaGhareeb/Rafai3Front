@@ -12,11 +12,11 @@ export class OrderService {
 
   }
 
-  private baseUrl:string='http://localhost:3000/api/order';
+  private baseUrl:string='https://rafai3-backend.herokuapp.com/api/order';
 
-  private cartUrl:string='http://localhost:3000/api/cart'
+  private cartUrl:string='https://rafai3-backend.herokuapp.com/api/cart'
 
-  private productUrl:string='http://localhost:3000/api/product';
+  private productUrl:string='https://rafai3-backend.herokuapp.com/api/product';
 
   getToken(){
 
