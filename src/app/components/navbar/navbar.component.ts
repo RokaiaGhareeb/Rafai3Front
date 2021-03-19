@@ -80,6 +80,8 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('rafai3Token');
     this.userDetails=null;
     this.adminDetails=null;
+
+    this.navRouter.navigateByUrl('');
   }
 
 
