@@ -1,0 +1,47 @@
+.bg {
+    background-color: #999b84 !important;
+}
+
+.back {
+    background-color: #d8ac9c;
+}
+
+.background {
+    background-color: #efd9d1 !important;
+}
+
+.t:hover {
+    background-color: #dac3bb !important;
+}
+
+.plus:hover,
+.minus:hover {
+    background-color: #efd9d1;
+    /* background-color: rgb(163, 228, 163); */
+    cursor: pointer;
+}
+
+
+/*  */
+
+.imag {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    height: 100%;
+}
+
+.io {
+    /* margin-bottom: 60px; */
+    width: 80%;
+    height: 70%;
+    justify-self: center;
+    justify-content: center;
+}
+
+.bym {
+    height: 8.5%;
+    margin-top: 50px;
+}

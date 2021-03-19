@@ -26,6 +26,7 @@ import { UserViewOrdersSubComponentComponent } from './components/orders/user-vi
 import { UserService } from 'src/services/user/user.service';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
+import { AppRoutingModule } from './modules/app-routing.module';
 
 
 
@@ -59,7 +60,8 @@ import { OrderDetailsComponent } from './components/orders/order-details/order-d
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [OrderService,UserService],
   bootstrap: [AppComponent]
