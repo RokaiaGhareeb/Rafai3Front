@@ -1,17 +1,27 @@
-.bg {
-    background-color: #999b84 !important;
+/* .bg {
+    background-color: #d8ac9c !important;
 }
 
 .back {
     background-color: #d8ac9c;
-}
+} */
 
 .background {
-    background-color: #efd9d1 !important;
+    background-color: #f4eeed !important;
 }
 
 .t:hover {
     background-color: #dac3bb !important;
+}
+
+.divBg {
+    background-color: rgb(216, 172, 156) !important;
+}
+
+.head {
+    background-color: rgb(239, 217, 209);
+    color: rgb( 153, 155, 132);
+    font-weight: 400;
 }
 
 .plus:hover,
@@ -21,12 +31,23 @@
     cursor: pointer;
 }
 
+.btnBg:hover {
+    -ms-transform: scale(1.1);
+    /*IE9*/
+    -webkit-transform: scale(1.1);
+    /*Safari3-8*/
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
 
 /*  */
 
 .imag {
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     justify-self: center;
@@ -41,7 +62,16 @@
     justify-content: center;
 }
 
+.orderFont {
+    color: rgb( 153, 155, 132) !important;
+    font-weight: bold;
+}
+
 .bym {
     height: 8.5%;
     margin-top: 50px;
+    width: 90%;
+    justify-self: center;
+    justify-content: center;
+    margin-left: 30px;
 }

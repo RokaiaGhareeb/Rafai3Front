@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProfileService } from 'src/services/profile.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ProfileService } from 'src/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private profileService:ProfileService) { }
+  constructor(private profileService:ProfileService,private router:Router) { }
 
   unsubscribeForUser;
   userDetails;
@@ -18,9 +19,16 @@ export class ProfileComponent implements OnInit {
       (userData)=>{
         console.log(userData);
         this.userDetails=userData;   
+
       },
       (err)=>{
         console.log(err);
+
+        this.router.navigateByUrl('authenticationFailed')
+      
+        // if (err['error'].error == "authentication failed") {
+        //   this.router.navigateByUrl('authenticationFailed')
+        // }
       }
     )
   }

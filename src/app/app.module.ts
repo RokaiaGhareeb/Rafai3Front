@@ -23,6 +23,11 @@ import { OrderService } from 'src/services/order/order.service';
 import { UserService } from 'src/services/user/user.service';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
+import { AuthenticationFailedComponent } from './components/authentication-failed/authentication-failed/authentication-failed.component';
+import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
+import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
+import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
+import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
 
 
 const appRoutes : Routes = [
@@ -34,7 +39,18 @@ const appRoutes : Routes = [
       {path: ':filter', component:ProductCardComponent},
     ],
   },
-  {path:'user/login',pathMatch:'full',component:LoginFormComponent}
+  {path:'user/login',pathMatch:'full',component:LoginFormComponent},
+  {path:'user/register',pathMatch:'full',component:SignFormComponent},
+  {path:'user/profile',pathMatch:'full',component:ProfileComponent},
+  {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
+  {path:'user/cart',pathMatch:'full',component:CartComponent},
+  {path:'user/order',pathMatch:'full',component:UserViewOrdersComponent},
+  {path:'user/order/:id',pathMatch:'full',component:OrderDetailsComponent},
+  {path:'admin/order',pathMatch:'full',component:AdminControlOrdersComponent},
+  {path:'admin/order/:id',pathMatch:'full',component:OrderDetailsComponent},
+  {path:'admin/order/:id',component:OrderDetailsComponent},
+  {path:'admin/login',pathMatch:'full',component:AdminLoginComponent}
+
 ];
 
 @NgModule({
@@ -55,7 +71,12 @@ const appRoutes : Routes = [
     CategoryMenuComponent,
     ProductHeaderComponent,
     AdminLoginComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    AuthenticationFailedComponent,
+    UserViewOrdersComponent,
+    UserViewOrdersSubComponentComponent,
+    AdminControlOrdersComponent,
+    AdminControlOrdersSubComponentComponent
   ],
   imports: [
     BrowserModule,

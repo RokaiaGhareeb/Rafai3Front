@@ -96,7 +96,7 @@ export class SignFormComponent implements OnInit {
         this.registered = "Registered successfully "
 
 
-
+        
       }, (err) => {
 
         console.log(err['error']);

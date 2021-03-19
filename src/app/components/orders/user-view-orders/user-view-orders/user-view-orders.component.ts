@@ -22,11 +22,10 @@ userOrders;
   
   this.subscriber=  this.UserordersServ.getAllOrders().subscribe(
 
-      (data)=>{
-
-        console.log(data)
+      (data:any)=>{
 
         this.userOrders=data;
+       
       },
       (err)=>{
 
