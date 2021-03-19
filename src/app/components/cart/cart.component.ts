@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
             },
             (err)=>{
 
-              console.log(err,);
+              console.log(err);
             },
             ()=>{
               this.unsubscriberForItem.unsubscribe();
