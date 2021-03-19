@@ -23,6 +23,7 @@ import { OrderService } from 'src/services/order/order.service';
 import { UserService } from 'src/services/user/user.service';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
+import { AuthenticationFailedComponent } from './components/authentication-failed/authentication-failed/authentication-failed.component';
 
 
 const appRoutes : Routes = [
@@ -34,7 +35,10 @@ const appRoutes : Routes = [
       {path: ':filter', component:ProductCardComponent},
     ],
   },
-  {path:'user/login',pathMatch:'full',component:LoginFormComponent}
+  {path:'user/login',pathMatch:'full',component:LoginFormComponent},
+  {path:'user/register',pathMatch:'full',component:SignFormComponent},
+  {path:'user/profile',pathMatch:'full',component:ProfileComponent},
+  {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
 ];
 
 @NgModule({
@@ -55,7 +59,8 @@ const appRoutes : Routes = [
     CategoryMenuComponent,
     ProductHeaderComponent,
     AdminLoginComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    AuthenticationFailedComponent
   ],
   imports: [
     BrowserModule,
