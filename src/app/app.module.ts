@@ -33,8 +33,8 @@ const appRoutes : Routes = [
     children: [
       {path: ':filter', component:ProductCardComponent},
     ],
-
-  }
+  },
+  {path:'user/login',pathMatch:'full',component:LoginFormComponent}
 ];
 
 @NgModule({
