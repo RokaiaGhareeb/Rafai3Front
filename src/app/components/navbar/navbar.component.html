@@ -49,18 +49,16 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item active">
-          <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning"
+          <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor"
             routerLink="home" class="nav-link" aria-current="home">Home</a>
         </li>
-        <li class="nav-item">
-          <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="todo"
-            class="nav-link">profile</a>
-        </li>
+        
   
         <li class="nav-item dropdown">
-          <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="user/profile"
+          <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="product"
             class="nav-link">our products</a>
         </li>
+
         <li class="nav-item dropdown">
          
 
@@ -68,19 +66,24 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
                 Cart
               </a>
               <div style="background-color: rgb(153, 155, 132);" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="user/cart" href="#">MY Cart</a>
-                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="user/order" href="#">My Orders</a>
+                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="user/cart" href="#">MY Cart</a>
+                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="user/order" href="#">My Orders</a>
                 
                
               </div>
         </li>
+
+        <li class="nav-item">
+            <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="pageFontColor" routerLink="user/profile"
+              class="nav-link">profile</a>
+          </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
         <button
         class="btn btn-outline-success"
         style="color: white; border: 2px solid white"
         type="submit"  [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="text-warning" routerLink="user/login"
+        routerLinkActive="pageFontColor" routerLink="user/login"
       >
         Log in
       </button>
@@ -89,7 +92,7 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         class="btn btn-outline-success"
         style="color: white; border: 2px solid white"
         type="submit"  [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="text-warning" routerLink="user/register"
+        routerLinkActive="pageFontColor" routerLink="user/register"
       >
         Register
       </button>
