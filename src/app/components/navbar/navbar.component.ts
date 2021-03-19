@@ -27,7 +27,24 @@ export class NavbarComponent implements OnInit {
  // get data of admin to display .. Admin and hist name
  if(this.checkIfAdmin){
 
-  this.navRouter.navigateByUrl('/admin/order');
+ this.subscriber= this.adminServ.getDetails().subscribe(
+
+    (data)=>{
+
+      this.adminDetails=data;
+    },
+    (err)=>{
+
+      this.navRouter.navigateByUrl('/admin/login');
+
+    },
+    ()=>{
+
+      this.subscriber.unsubscribe();
+    }
+  )
+
+
 
  }
 

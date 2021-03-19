@@ -20,4 +20,16 @@ export class AdminService {
 
 
 
+  getToken(){
+
+    return localStorage.getItem('rafai3Token')
+  }
+
+  // get admin details .. first name .. last name ...
+  getDetails(){
+
+    return this._httpClient.get(this.baseUrl,{headers:{Authorization:this.getToken()}})
+  }
+  
+
 }

@@ -50,12 +50,12 @@ export class AdminLoginComponent implements OnInit {
 
         this.router.navigateByUrl('/admin/order')
 
-        // //make page refresh again when navigate from logged in to check authorization and hide
-        // // logged in and register buttons
-        // this.router.navigate(['home'])
-        //   .then(() => {
-        //     window.location.reload();
-        //   });
+         //make page refresh again when navigate from logged in to check authorization and hide
+        // logged in and register buttons
+        this.router.navigate(['admin/order'])
+           .then(() => {
+             window.location.reload();
+           });
 
       },
       (err) => {
