@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/services/user/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/services/user/user.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(private userServ:UserService) { }
+  constructor(private userServ:UserService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -46,6 +47,11 @@ export class LoginFormComponent implements OnInit {
       (data) => {
         console.log(data)
         localStorage.setItem('rafai3Token', data["token"]);
+
+        this.router.navigate([''])
+        .then(() => {
+          window.location.reload();
+        });
 
         // //make page refresh again when navigate from logged in to check authorization and hide
         // // logged in and register buttons

@@ -25,9 +25,15 @@ export class OrderDetailsComponent implements OnInit {
 
   createdAt;
 
+  // check if admin display this component to allow reject order or not
+  checkAdmin=false;
+
   ngOnInit(): void {
 
     this.orderId=this.activatedRouter.snapshot.params.id;
+
+    // check if router includes admin
+    this.checkAdmin= this.router.url.includes('admin')
 
    this.subscriber= this.orderServ.getOrderDetailsById(this.orderId).subscribe(
 
@@ -50,5 +56,77 @@ export class OrderDetailsComponent implements OnInit {
     )
 
   }
+
+
+
+
+  // should include message for accept or reject
+  messageIncluded='';
+
+  // pass param to function accept order accepted
+  acceptOrder(_deliveredDuration){
+
+    if(_deliveredDuration==''){ 
+      this.messageIncluded='Should write when it will be delivered' 
+      return
+  }
+
+  
+
+  this.messageIncluded='';
+  
+    _deliveredDuration='Order will be delivered at '+_deliveredDuration
+   this.subscriber= this.orderServ.adminAcceptOrder(this.orderDetails._id,_deliveredDuration).subscribe(
+
+      (data)=>{
+
+        console.log(data)
+        this. orderDetails.status='accepted'
+      }
+      ,
+      (err)=>{
+
+        console.log(err)
+      },
+      ()=>{
+        this.subscriber.unsubscribe();
+      }
+    )
+  }
+
+  // pass param to function accept order accepted
+
+  rejectOrder(_rejectionReason){
+
+    if(_rejectionReason==''){ 
+      this.messageIncluded='Should write why order was rejected' 
+      return
+  }
+
+  this.messageIncluded='';
+
+
+    this.subscriber= this.orderServ.adminRejectOrder(this.orderDetails._id,_rejectionReason).subscribe(
+
+      (data)=>{
+
+        console.log(data)
+       this. orderDetails.status='rejected'
+      }
+      ,
+      (err)=>{
+
+        console.log(err)
+      },
+      ()=>{
+        this.subscriber.unsubscribe();
+      }
+    )
+
+  }
+
+
+
+
 
 }
