@@ -1,11 +1,11 @@
-<nav
+<!-- <nav
 class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #d8ac9c;"
 >
 <div class="container-fluid">
-  <a class="navbar-brand" href="#">Rafai3</a>
+  <a class="navbar-brand" href="#">Rafai3</a> -->
   <!--img src="assets/images/logo3.jpg" style="height: 90px; border-radius: 50%;"-->
 
-  <form class="d-flex">
+  <!-- <form class="d-flex">
     <div class="burger-icon"></div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,9 +31,72 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         style="color: white; border: 2px solid white"
         type="submit"
       >
-        login
+        Log in
       </button>
     </div>
   </form>
 </div>
-</nav>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(153, 155, 132);">
+    <a class="navbar-brand" style="color:rgb(239,217,209)">Rafai3</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item active">
+          <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning"
+            routerLink="home" class="nav-link" aria-current="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="todo"
+            class="nav-link">profile</a>
+        </li>
+  
+        <li class="nav-item dropdown">
+          <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="user/profile"
+            class="nav-link">our products</a>
+        </li>
+        <li class="nav-item dropdown">
+         
+
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+                Cart
+              </a>
+              <div style="background-color: rgb(153, 155, 132);" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="user/cart" href="#">MY Cart</a>
+                <a class="dropdown-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-warning" routerLink="user/order" href="#">My Orders</a>
+                
+               
+              </div>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button
+        class="btn btn-outline-success"
+        style="color: white; border: 2px solid white"
+        type="submit"  [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="text-warning" routerLink="user/login"
+      >
+        Log in
+      </button>
+
+         <button
+        class="btn btn-outline-success"
+        style="color: white; border: 2px solid white"
+        type="submit"  [routerLinkActiveOptions]="{exact:true}"
+        routerLinkActive="text-warning" routerLink="user/register"
+      >
+        Register
+      </button>
+      </div>
+      <div class="form-inline my-2 my-lg-0 text-primary" >
+        Welcome <span class="text-danger mx-4">sss</span>
+        <input type="button" class="btn btn-danger" value="Log out" id="logout" >
+      </div>
+    </div>
+  </nav>
