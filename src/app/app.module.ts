@@ -27,6 +27,7 @@ import { AuthenticationFailedComponent } from './components/authentication-faile
 import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
 import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
 import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
+import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
 
 
 const appRoutes : Routes = [
@@ -70,7 +71,9 @@ const appRoutes : Routes = [
     OrderDetailsComponent,
     AuthenticationFailedComponent,
     UserViewOrdersComponent,
-    UserViewOrdersSubComponentComponent
+    UserViewOrdersSubComponentComponent,
+    AdminControlOrdersComponent,
+    AdminControlOrdersSubComponentComponent
   ],
   imports: [
     BrowserModule,

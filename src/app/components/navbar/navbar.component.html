@@ -101,7 +101,7 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         class="btn btn-outline-success"
         style="color: white; border: 2px solid white"
         type="submit"  [routerLinkActiveOptions]="{exact:true}"
-        routerLinkActive="text-danger" routerLink="user/login"
+        routerLinkActive="text-danger" (click)="navigateLogin()"
       >
       <span>  Log in</span>
       </button>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/services/admin/admin.service';
 import { UserService } from 'src/services/user/user.service';
 
@@ -10,7 +10,7 @@ import { UserService } from 'src/services/user/user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:ActivatedRoute,private adminServ:AdminService,private userServ:UserService) { 
+  constructor(private router:ActivatedRoute,private adminServ:AdminService,private userServ:UserService,private navRouter:Router) { 
 
   }
 
@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
  // get data of admin to display .. Admin and hist name
  if(this.checkIfAdmin){
 
-  
+  this.navRouter.navigateByUrl('/admin/order');
 
  }
 
@@ -64,6 +64,26 @@ export class NavbarComponent implements OnInit {
     this.userDetails=null;
     this.adminDetails=null;
   }
+
+
+  // in case login check if user or admin to navigate to his login component
+  navigateLogin(){
+
+    if(this.checkIfAdmin){
+
+      this.navRouter.navigateByUrl('/admin/login')
+      
+    }
+    
+    if(!this.checkIfAdmin){
+
+      this.navRouter.navigateByUrl('/user/login')
+      
+    }
+
+
+  }
+ 
 
 
   checkIfAdmin=false;

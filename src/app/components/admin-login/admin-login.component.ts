@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AdminService } from 'src/services/admin/admin.service';
 export class AdminLoginComponent implements OnInit {
 
   // inject admin service
-  constructor(private adminServ:AdminService) { 
+  constructor(private adminServ:AdminService,private router:Router) { 
 
   }
 
@@ -46,6 +47,8 @@ export class AdminLoginComponent implements OnInit {
       (data) => {
         console.log(data)
         localStorage.setItem('rafai3Token', data["token"]);
+
+        this.router.navigateByUrl('/admin/order')
 
         // //make page refresh again when navigate from logged in to check authorization and hide
         // // logged in and register buttons
