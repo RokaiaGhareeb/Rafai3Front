@@ -1,35 +1,45 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PromotionCardComponent } from './components/promotion-card/promotion-card.component';
 import { PromotionDetailsComponent } from './components/promotion-details/promotion-details.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductCardComponent } from './components/product/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/product/product-details/product-details.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignFormComponent } from './components/sign-form/sign-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { ProductCategoryComponent } from './components/product-category/product-category.component';
-
-import{HttpClientModule} from '@angular/common/http'
+import { ProductCategoryComponent } from './components/product/product-category/product-category.component';
+import { CategoryMenuComponent } from './components/product/category-menu/category-menu.component';
+import { ProductHeaderComponent } from './components/product/product-header/product-header.component';
 import { OrderService } from 'src/services/order/order.service';
-import { OrdersComponent } from './components/orders-Components/user-orders/orders.component';
-import { MakeOrderComponent } from './components/orders-Components/make-order/make-order.component';
-import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
-import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
-import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
-import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
 import { UserService } from 'src/services/user/user.service';
+<<<<<<< HEAD
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
 import { AppRoutingModule } from './modules/app-routing.module';
 
+=======
+>>>>>>> facb4e61ed0186fc6f19333a939c166194ca61d6
 
+const appRoutes : Routes = [
+  {path:'', redirectTo:'product/kitchen', pathMatch:'full'},
+  {
+    path:'product',
+    component: ProductCategoryComponent,
+    children: [
+      {path: ':filter', component:ProductCardComponent},
+    ],
 
+  }
+];
 
 @NgModule({
   declarations: [
@@ -46,22 +56,20 @@ import { AppRoutingModule } from './modules/app-routing.module';
     HomeComponent,
     ProfileComponent,
     ProductCategoryComponent,
-    OrdersComponent,
-    MakeOrderComponent,
-    AdminControlOrdersComponent,
-    UserViewOrdersComponent,
-    AdminControlOrdersSubComponentComponent,
-    UserViewOrdersSubComponentComponent,
-    AdminLoginComponent,
-    OrderDetailsComponent
-
+    CategoryMenuComponent,
+    ProductHeaderComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+<<<<<<< HEAD
     ReactiveFormsModule,
     AppRoutingModule
+=======
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
+>>>>>>> facb4e61ed0186fc6f19333a939c166194ca61d6
   ],
   providers: [OrderService,UserService],
   bootstrap: [AppComponent]
