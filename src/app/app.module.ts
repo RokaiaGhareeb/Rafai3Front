@@ -44,7 +44,8 @@ const appRoutes : Routes = [
   {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
   {path:'user/cart',pathMatch:'full',component:CartComponent},
   {path:'user/order',pathMatch:'full',component:UserViewOrdersComponent},
-  {path:'admin/order',pathMatch:'full',component:AdminControlOrdersComponent}
+  {path:'admin/order',pathMatch:'full',component:AdminControlOrdersComponent},
+  {path:'admin/login',pathMatch:'full',component:AdminLoginComponent}
 
 ];
 
