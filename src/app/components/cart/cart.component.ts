@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 
 
@@ -9,7 +10,7 @@ import { CartService } from 'src/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cartservice:CartService) { }
+  constructor(private cartservice:CartService,private router:Router) { }
 
 
 
@@ -45,7 +46,7 @@ export class CartComponent implements OnInit {
             },
             (err)=>{
 
-              console.log(err);
+              console.log(err,);
             },
             ()=>{
               this.unsubscriberForItem.unsubscribe();
@@ -57,7 +58,9 @@ export class CartComponent implements OnInit {
         console.log(this.products)
       },
       (err)=>{
-        console.log(err)
+        
+        this.router.navigateByUrl('authenticationFailed')
+      //  console.log(err)
       },
       ()=>{
         

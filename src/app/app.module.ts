@@ -39,6 +39,8 @@ const appRoutes : Routes = [
   {path:'user/register',pathMatch:'full',component:SignFormComponent},
   {path:'user/profile',pathMatch:'full',component:ProfileComponent},
   {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
+  {path:'user/cart',pathMatch:'full',component:CartComponent},
+
 ];
 
 @NgModule({
