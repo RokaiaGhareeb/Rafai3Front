@@ -1,1 +1,31 @@
-<p>profile works!</p>
+<h1>eeeeeeeee</h1>
+<div class="text-center border-blue" *ngIf="userDetails">
+  <h1 class="my-5">
+    <span>Welcome</span>
+    <span class="text-primary">
+      {{ userDetails.firstname }} {{ userDetails.lastname }}</span
+    >
+  </h1>
+
+  <div class="alert alert-primary w-50 m-auto">
+    <h3 class="my-4">
+      Your Email <span class="text-primary">{{ userDetails.email }}</span>
+    </h3>
+    <h3 *ngIf="userDetails.age" class="my-4">
+      Your Age
+      <div class="text-primary">{{ userDetails.age }}</div>
+    </h3>
+    <h3 *ngIf="userDetails.phone" class="my-4">
+      Your Phone Number
+      <div class="text-primary">{{ userDetails.phone }}</div>
+    </h3>
+
+    <!--div>
+            <input type="button" class="btn btn-danger mx-2" value="Edit profile" routerLink="edit"
+                [routerLinkActiveOptions]="{exact:true}">
+            <input type="button" class="btn btn-danger mx-2" value="Edit password" (click)="navigatePassword()">
+
+
+        </div-->
+  </div>
+</div>

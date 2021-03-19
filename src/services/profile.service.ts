@@ -9,7 +9,7 @@ export class ProfileService {
   constructor(private _httpClient:HttpClient) {
 
    }
-   private baseUrl : string="http://localhost:3000/api/user";
+   private baseUrl : string="https://rafai3-backend.herokuapp.com/api/user";
 
    getToken(){
 
