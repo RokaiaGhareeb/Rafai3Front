@@ -24,6 +24,8 @@ import { UserService } from 'src/services/user/user.service';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
 import { AuthenticationFailedComponent } from './components/authentication-failed/authentication-failed/authentication-failed.component';
+import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
+import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
 
 
 const appRoutes : Routes = [
@@ -40,6 +42,7 @@ const appRoutes : Routes = [
   {path:'user/profile',pathMatch:'full',component:ProfileComponent},
   {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
   {path:'user/cart',pathMatch:'full',component:CartComponent},
+  {path:'user/order',pathMatch:'full',component:UserViewOrdersComponent}
 
 ];
 
@@ -62,7 +65,9 @@ const appRoutes : Routes = [
     ProductHeaderComponent,
     AdminLoginComponent,
     OrderDetailsComponent,
-    AuthenticationFailedComponent
+    AuthenticationFailedComponent,
+    UserViewOrdersComponent,
+    UserViewOrdersSubComponentComponent
   ],
   imports: [
     BrowserModule,
