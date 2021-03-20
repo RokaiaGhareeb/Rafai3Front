@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { OrderService } from 'src/services/order/order.service';
 
 @Component({
   selector: 'app-user-view-orders-sub-component',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UserViewOrdersSubComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private orderServ:OrderService) { }
 
   ngOnInit(): void {
 
@@ -22,5 +23,22 @@ export class UserViewOrdersSubComponentComponent implements OnInit {
   createdAt;
 
   subscriber;
+
+
+  confirmCancel='';
+  // cancel order by pass its id
+  cancelOrder(){
+
+    this.orderServ.userDeleteOrder(this.orderDetails._id).subscribe(
+      (data)=>{
+
+        this.confirmCancel='Order is deleted'
+      },
+      (err)=>{
+ 
+         this.confirmCancel=err['error'].error
+      }
+    )
+  }
 
 }
