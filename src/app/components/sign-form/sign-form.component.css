@@ -1,95 +1,76 @@
-#body {
-  background-color: rgb(239, 217, 209);
+* {
+  box-sizing: border-box;
+  font-family: Georgia, serif;
 }
-
-form {
-  background-color: rgb(216, 172, 156, 0.7);
+html {
+  height: 100%;
 }
-h3,
-h4 {
-  font-size: large;
-  font-style: oblique;
-  font-family: "Times New Roman", Times, serif;
-  color: rgb(153, 155, 132);
-  position: absolute;
+body {
+  background-color: rgb(216, 172, 156);
 }
-
-#f,
-#m {
-  background-color: rgb(153, 155, 132, 0.7);
-  border: 1px solid rgb(153, 155, 132);
+.align {
   color: rgb(239, 217, 209);
-  width: 30vh;
-  height: 35px;
-  border-radius: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin: 10px;
-  align-items: center;
+  font-size: 17px;
+  padding: 5px;
 }
 
-#f:hover {
-  color: rgb(138, 139, 122);
-  background-color: rgba(216, 172, 156);
-  box-shadow: 1px 1px 8px 8px rgb(216, 172, 156);
-  border-radius: 8px;
+.grid {
+  margin: auto;
+  max-width: 462px;
 }
-#m:hover {
-  color: rgb(138, 139, 122);
-  background-color: rgba(216, 172, 156, 0.3);
-  box-shadow: 1px 1px 8px 8px rgb(216, 172, 156, 0.3);
-  border-radius: 8px;
-}
-span {
-  color: rgb(141, 11, 11);
+h2 {
+  font-size: 38px;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 
-input[type="button"]:hover {
-  color: rgb(138, 139, 122);
-  background-color: rgba(216, 172, 156, 0.3);
-  box-shadow: 1px 1px 8px 8px rgb(216, 172, 156, 0.3);
-  border-radius: 8px;
+.registration_form {
+  background-image: linear-gradient(rgb(153, 155, 132), rgb(153, 155, 132));
+  box-shadow: 0 0 250px rgb(153, 155, 132);
+  text-align: center;
+  padding: 20px 15px;
 }
 
-input[type="button"] {
-  color: rgb(239, 217, 209);
-  background-color: white;
+.input {
+  border: 1px solid rgb(239, 217, 209);
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+  color: rgb(216, 172, 156);
+  font-size: 17px;
+  outline: 0;
+  padding: 8px;
+  width: 80%;
+  margin: 15px;
+}
 
-  border-radius: 2px;
-  background-color: rgb(153, 155, 132, 0.7);
-  width: 30vh;
-  height: 35px;
-  border-radius: 8px;
-  margin: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+.input::placeholder {
+  color: rgb(216, 172, 156);
 }
-.form-control {
-  background-color: rgb(153, 155, 132, 0.7);
-  border: 1px solid rgb(153, 155, 132);
-  color: rgb(239, 217, 209);
-  width: 70vh;
-  height: 35px;
+
+.button {
+  background-color: rgb(216, 172, 156);
+  /* background-image: linear-gradient(160deg, #4ba3e2, #67b1d4); */
+  color: rgb(117, 117, 110);
+  padding: 8px;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  width: 50%;
+  border: none;
   border-radius: 8px;
-  margin: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  transition: all 0.5s;
+  outline: none;
 }
-[type="text"] {
-  background-color: rgb(153, 155, 132, 0.7);
-  border: 1px solid rgb(153, 155, 132);
-  color: rgb(246, 221, 212);
-  width: 70vh;
-  height: 35px;
-  border-radius: 8px;
-  margin: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+.button:hover {
+  transform: scale(0.93, 0.93);
+  box-shadow: 5px 5px 30px 15px rgba(216, 172, 156, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  /* box-shadow: 0px 4px 17px 3px #70CED7; */
+}
+
+.text-danger {
+  display: none;
+  font-size: 16px;
 }
