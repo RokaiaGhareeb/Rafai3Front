@@ -109,4 +109,10 @@ subscriber;
   ngOnInit(): void {
   }
 
+  // navigate to profile compoennt after changing details of user
+  navigateProfile() {
+
+    this.router.navigateByUrl('user/profile')
+  }
+
 }

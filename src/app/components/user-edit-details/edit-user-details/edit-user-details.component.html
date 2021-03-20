@@ -64,7 +64,9 @@
                 <input class="form-control" #phone type="text" name="" formControlName="phone">
             </div>
 
-            <input [disabled]="profileForm.invalid" type="button" class="btn btn-danger" name="editBtn"
+            <input value="Back to profile" type="button" class="btn btn-primary" name="backBtn" (click)="navigateProfile()">
+
+            <input [disabled]="profileForm.invalid" type="button" class="btn btn-danger mx-3" name="editBtn"
                 value="confirm edit" (click)="confirm(firstname,lastname,age,phone)" (click)="navigateProfile()">
 
         </form>

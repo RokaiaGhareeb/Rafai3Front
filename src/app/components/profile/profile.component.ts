@@ -34,15 +34,15 @@ export class ProfileComponent implements OnInit {
   }
 
 
-   // navigate to edit/ passowrd compoennt to edit password after click
-  //  navigatePassword() {
+  // navigate to edit/ passowrd compoennt to edit password after click
+   navigatePassword() {
 
-  //   this.router.navigateByUrl('/user/password/' + this.userDetails.username)
+    this.router.navigateByUrl("/user/password" )
 
-  // }
+  }
 
-  // subscriber;
+  subscriber;
 
-  // userProfile;
+  userProfile;
 
 }

@@ -19,13 +19,11 @@
       Your Phone Number
       <div class="text-primary">{{ userDetails.phone }}</div>
     </h3>
+<div>
+  <input type="button" class="btn btn-danger mx-2" value="Edit profile" routerLink="edit"
+  [routerLinkActiveOptions]="{exact:true}">
+<input type="button" class="btn btn-danger mx-2" value="Edit password" (click)="navigatePassword()">
 
-    <!--div>
-            <input type="button" class="btn btn-danger mx-2" value="Edit profile" routerLink="edit"
-                [routerLinkActiveOptions]="{exact:true}">
-            <input type="button" class="btn btn-danger mx-2" value="Edit password" (click)="navigatePassword()">
-
-
-        </div-->
+</div>
   </div>
 </div>

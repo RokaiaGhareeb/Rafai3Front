@@ -99,6 +99,10 @@ export class EditUserDetailsComponent implements OnInit {
     this.subscriber.unsubscribe()
 
   }
+
+
+  
+
 }
 
 // to validate phones  custom validator

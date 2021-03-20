@@ -167,9 +167,9 @@
           (click)="register(username,email,password,firstname,lastname,age,phone)" value="Register">
 
       <h4 class="text-primary" *ngIf="registered">
-          {{registered}}. Login with your details. after <span style="cursor: pointer;" (click)="navigateLogin()"
-              class="text-danger"><u>click
-                  here</u></span>
+          {{registered}}. Login with your details
+          <input type="button" class="btn btn-primary" style="cursor: pointer;" value="Log in" (click)="navigateLogin()">
+    
       </h4>
   </form>
 
