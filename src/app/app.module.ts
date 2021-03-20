@@ -28,6 +28,8 @@ import { UserViewOrdersComponent } from './components/orders/user-view-orders/us
 import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
 import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
 import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
+import { EditPasswordComponent } from './components/user-edit-details/edit-password/edit-password.component';
+import { EditUserDetailsComponent } from './components/user-edit-details/edit-user-details/edit-user-details.component';
 
 
 const appRoutes : Routes = [
@@ -46,6 +48,8 @@ const appRoutes : Routes = [
   {path:'user/cart',pathMatch:'full',component:CartComponent},
   {path:'user/order',pathMatch:'full',component:UserViewOrdersComponent},
   {path:'user/order/:id',pathMatch:'full',component:OrderDetailsComponent},
+  {path:'user/profile/edit',pathMatch:'full',component:EditUserDetailsComponent},
+  {path:'user/password',pathMatch:'full',component:EditPasswordComponent},
   {path:'admin/order',pathMatch:'full',component:AdminControlOrdersComponent},
   {path:'admin/order/:id',pathMatch:'full',component:OrderDetailsComponent},
   {path:'admin/order/:id',component:OrderDetailsComponent},
@@ -76,7 +80,9 @@ const appRoutes : Routes = [
     UserViewOrdersComponent,
     UserViewOrdersSubComponentComponent,
     AdminControlOrdersComponent,
-    AdminControlOrdersSubComponentComponent
+    AdminControlOrdersSubComponentComponent,
+    EditPasswordComponent,
+    EditUserDetailsComponent
   ],
   imports: [
     BrowserModule,
