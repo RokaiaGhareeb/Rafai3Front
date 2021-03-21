@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.css']
+  styleUrls: ['./admin-login.component.css'],
 })
 export class AdminLoginComponent implements OnInit {
 
   // inject admin service
-  constructor(private adminServ:AdminService) { 
+  constructor(private adminServ:AdminService) {
 
   }
 
@@ -61,7 +61,7 @@ export class AdminLoginComponent implements OnInit {
         this.faliedLogin = err['error'].error;
       },
       () => {
- 
+
         this.subscriber.unsubscribe();
       }
 

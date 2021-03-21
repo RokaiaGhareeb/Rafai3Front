@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  formdata: FormData = new FormData();
   constructor() { }
 
   ngOnInit(): void {

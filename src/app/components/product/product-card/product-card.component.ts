@@ -18,7 +18,7 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.unsubscriber = this.productService
-        .getProductsOfCategory(params['filter'])
+        .getOfCategory(params['filter'])
         .subscribe(
           (res) => {
             this.products = res;

@@ -13,11 +13,23 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getAllProducts() {
+  getAll() {
     return this.http.get(baseURL);
   }
 
-  getProductsOfCategory(filter){
+  getOfCategory(filter){
     return this.http.get(baseURL + "filter/" + filter);
+  }
+
+  add(product){
+    return this.http.post(baseURL, product);
+  }
+
+  delete(id){
+    return this.http.delete(baseURL + id);
+  }
+
+  edit(id, editedData){
+    return this.http.patch(baseURL + id, editedData);
   }
 }
