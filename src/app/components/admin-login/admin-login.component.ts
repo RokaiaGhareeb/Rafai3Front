@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
+=======
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+>>>>>>> 46a8fa5f7be69d6633fe4da6e83790fe724b75b6
 import { AdminService } from 'src/services/admin/admin.service';
 
 @Component({
@@ -10,7 +15,11 @@ import { AdminService } from 'src/services/admin/admin.service';
 export class AdminLoginComponent implements OnInit {
 
   // inject admin service
+<<<<<<< HEAD
   constructor(private adminServ:AdminService) {
+=======
+  constructor(private adminServ:AdminService,private router:Router) { 
+>>>>>>> 46a8fa5f7be69d6633fe4da6e83790fe724b75b6
 
   }
 
@@ -47,12 +56,14 @@ export class AdminLoginComponent implements OnInit {
         console.log(data)
         localStorage.setItem('rafai3Token', data["token"]);
 
-        // //make page refresh again when navigate from logged in to check authorization and hide
-        // // logged in and register buttons
-        // this.router.navigate(['home'])
-        //   .then(() => {
-        //     window.location.reload();
-        //   });
+        this.router.navigateByUrl('/admin/order')
+
+         //make page refresh again when navigate from logged in to check authorization and hide
+        // logged in and register buttons
+        this.router.navigate(['admin/order'])
+           .then(() => {
+             window.location.reload();
+           });
 
       },
       (err) => {

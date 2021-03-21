@@ -27,6 +27,16 @@ import { SearchBoxComponent } from './components/adminProduct/search-box/search-
 
 import { OrderService } from 'src/services/order/order.service';
 import { UserService } from 'src/services/user/user.service';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
+import { AuthenticationFailedComponent } from './components/authentication-failed/authentication-failed/authentication-failed.component';
+import { UserViewOrdersComponent } from './components/orders/user-view-orders/user-view-orders/user-view-orders.component';
+import { UserViewOrdersSubComponentComponent } from './components/orders/user-view-orders/user-view-orders-sub-component/user-view-orders-sub-component.component';
+import { AdminControlOrdersComponent } from './components/orders/orders-admin-control/admin-control-orders/admin-control-orders.component';
+import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
+import { EditPasswordComponent } from './components/user-edit-details/edit-password/edit-password.component';
+import { EditUserDetailsComponent } from './components/user-edit-details/edit-user-details/edit-user-details.component';
+
 
 const appRoutes : Routes = [
   {path:'', redirectTo:'product/kitchen', pathMatch:'full'},
@@ -36,9 +46,26 @@ const appRoutes : Routes = [
     children: [
       {path: ':filter', component:ProductCardComponent},
     ],
+  },
+  {path:'user/login',pathMatch:'full',component:LoginFormComponent},
+  {path:'user/register',pathMatch:'full',component:SignFormComponent},
+  {path:'user/profile',pathMatch:'full',component:ProfileComponent},
+  {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
+  {path:'user/cart',pathMatch:'full',component:CartComponent},
+  {path:'user/order',pathMatch:'full',component:UserViewOrdersComponent},
+  {path:'user/order/:id',pathMatch:'full',component:OrderDetailsComponent},
+  {path:'user/profile/edit',pathMatch:'full',component:EditUserDetailsComponent},
+  {path:'user/password',pathMatch:'full',component:EditPasswordComponent},
+  {path:'admin/order',pathMatch:'full',component:AdminControlOrdersComponent},
+  {path:'admin/order/:id',pathMatch:'full',component:OrderDetailsComponent},
+  {path:'admin/order/:id',component:OrderDetailsComponent},
+  {path:'admin/login',pathMatch:'full',component:AdminLoginComponent}
 
+<<<<<<< HEAD
   },
   {path:'admin/product', component:AdminProductComponent}
+=======
+>>>>>>> 46a8fa5f7be69d6633fe4da6e83790fe724b75b6
 ];
 
 @NgModule({
@@ -57,9 +84,21 @@ const appRoutes : Routes = [
     ProductCategoryComponent,
     CategoryMenuComponent,
     ProductHeaderComponent,
+<<<<<<< HEAD
     AdminProductComponent,
     AdminProductItemComponent,
     SearchBoxComponent
+=======
+    AdminLoginComponent,
+    OrderDetailsComponent,
+    AuthenticationFailedComponent,
+    UserViewOrdersComponent,
+    UserViewOrdersSubComponentComponent,
+    AdminControlOrdersComponent,
+    AdminControlOrdersSubComponentComponent,
+    EditPasswordComponent,
+    EditUserDetailsComponent
+>>>>>>> 46a8fa5f7be69d6633fe4da6e83790fe724b75b6
   ],
   imports: [
     BrowserModule,
