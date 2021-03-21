@@ -61,11 +61,6 @@ const appRoutes : Routes = [
   {path:'admin/order/:id',component:OrderDetailsComponent},
   {path:'admin/login',pathMatch:'full',component:AdminLoginComponent}
 
-<<<<<<< HEAD
-  },
-  {path:'admin/product', component:AdminProductComponent}
-=======
->>>>>>> 46a8fa5f7be69d6633fe4da6e83790fe724b75b6
 ];
 
 @NgModule({
@@ -84,11 +79,9 @@ const appRoutes : Routes = [
     ProductCategoryComponent,
     CategoryMenuComponent,
     ProductHeaderComponent,
-<<<<<<< HEAD
     AdminProductComponent,
     AdminProductItemComponent,
-    SearchBoxComponent
-=======
+    SearchBoxComponent,
     AdminLoginComponent,
     OrderDetailsComponent,
     AuthenticationFailedComponent,
@@ -98,7 +91,6 @@ const appRoutes : Routes = [
     AdminControlOrdersSubComponentComponent,
     EditPasswordComponent,
     EditUserDetailsComponent
->>>>>>> 46a8fa5f7be69d6633fe4da6e83790fe724b75b6
   ],
   imports: [
     BrowserModule,
