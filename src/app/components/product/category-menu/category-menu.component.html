@@ -4,4 +4,5 @@
   <div class='category-menu-item mx-5 my-2' routerLinkActive = 'category-menu-item-selected' (click) = 'onClickMenu("bedroom")' [routerLink]="'bedroom'">Bedroom</div>
   <div class='category-menu-item mx-5 my-2' routerLinkActive = 'category-menu-item-selected' (click) = 'onClickMenu("bathroom")' [routerLink]="'bathroom'">Bathroom</div>
   <div class='category-menu-item mx-5 my-2' routerLinkActive = 'category-menu-item-selected' (click) = 'onClickMenu("others")' [routerLink]="'others'">Others</div>
+  <app-search-box (searchEmitter)="onFiltering($event)"></app-search-box>
 </div>

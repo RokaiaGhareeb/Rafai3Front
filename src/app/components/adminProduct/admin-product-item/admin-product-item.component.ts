@@ -9,7 +9,10 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./admin-product-item.component.css'],
 })
 export class AdminProductItemComponent implements OnInit {
-  constructor(private productService: ProductService, private _snackBar : MatSnackBar) {}
+  constructor(
+    private productService: ProductService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   product = {
     _id: null,
@@ -39,7 +42,6 @@ export class AdminProductItemComponent implements OnInit {
       price: this.product.price,
       category: this.product.category,
     });
-
   }
 
   onDeleteProduct(product) {
@@ -49,6 +51,7 @@ export class AdminProductItemComponent implements OnInit {
         if (index > -1) {
           this.products.splice(index, 1);
         }
+        console.log(res);
       },
       (err) => {
         console.log(err);
@@ -63,10 +66,7 @@ export class AdminProductItemComponent implements OnInit {
     details: new FormControl(),
     price: new FormControl(),
     category: new FormControl(),
-    image: new FormControl()
   });
-
-
 
   onImageSelected(input) {
     if (input.files && input.files[0]) {
@@ -77,11 +77,8 @@ export class AdminProductItemComponent implements OnInit {
       reader.onload = (_event) => {
         this.image = reader.result;
       };
-    }else{
-      this.editedProduct.append('image', null);
     }
   }
-
 
   onEditProduct() {
     this.editedProduct.append(
@@ -91,39 +88,50 @@ export class AdminProductItemComponent implements OnInit {
     this.editedProduct.append('price', this.oldProductForm.value['price']);
     this.editedProduct.append('details', this.oldProductForm.value['details']);
     this.editedProduct.append('title', this.oldProductForm.value['title']);
+    console.log(this.editedProduct['image']);
+    console.log(!(this.editedProduct['image']));
 
-    document.getElementById("closeModalButton3").click();
+    if(!(this.editedProduct['image'])){this.editedProduct.append('image',null)}
+    document.getElementById('closeModalButton3').click();
 
     let unsupscriber = this.productService
       .edit(this.product._id, this.editedProduct)
-      .subscribe((res) => {
-        console.log(res);
-        this._snackBar.open('Product edited successfully.', '', {
-          duration: 4000,
-          verticalPosition: 'bottom',
-          horizontalPosition: 'center',
-          panelClass: ['snackBar'],
-        });
-      },
-      (err) => {
-        console.log(err);
-        this._snackBar.open(
-          'Something goes wrong, product was not edited.',
-          '',
-          {
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this._snackBar.open('Product edited successfully.', '', {
             duration: 4000,
             verticalPosition: 'bottom',
             horizontalPosition: 'center',
             panelClass: ['snackBar'],
-
-          }
-        );
+          });
+        },
+        (err) => {
+          console.log(err);
+          this._snackBar.open(
+            'Something goes wrong, product was not edited.',
+            '',
+            {
+              duration: 4000,
+              verticalPosition: 'bottom',
+              horizontalPosition: 'center',
+              panelClass: ['snackBar'],
+            }
+          );
+        },
+        () => {
+          unsupscriber.unsubscribe();
+        }
+      );
+    this.oldProductForm.reset();
+    unsupscriber = this.productService.getAll().subscribe(
+      (products) => {
+        this.products = products;
       },
+    (err)=>{console.log(err)},
       () => {
         unsupscriber.unsubscribe();
       }
-      );
-      this.oldProductForm.reset();
-      unsupscriber = this.productService.getAll().subscribe((products)=>{this.products = products}, ()=>{unsupscriber.unsubscribe()});
+    );
   }
 }

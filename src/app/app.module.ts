@@ -59,7 +59,9 @@ const appRoutes : Routes = [
   {path:'admin/order',pathMatch:'full',component:AdminControlOrdersComponent},
   {path:'admin/order/:id',pathMatch:'full',component:OrderDetailsComponent},
   {path:'admin/order/:id',component:OrderDetailsComponent},
-  {path:'admin/login',pathMatch:'full',component:AdminLoginComponent}
+  {path:'admin/login',pathMatch:'full',component:AdminLoginComponent},
+  {path:'admin/product',pathMatch:'full',component:AdminProductComponent},
+
 
 ];
 

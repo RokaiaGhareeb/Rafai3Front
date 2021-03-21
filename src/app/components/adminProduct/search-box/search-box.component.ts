@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-search-box',
@@ -6,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-box.component.css'],
 })
 export class SearchBoxComponent implements OnInit {
-  constructor() {}
+  constructor(private productService : ProductService) {}
 
   ngOnInit(): void {}
   searchedName: string;
@@ -14,5 +15,6 @@ export class SearchBoxComponent implements OnInit {
 
   search() {
       this.searchEmitter.emit(this.searchedName);
+      this.productService.onNameFilterChanged(this.searchedName);
   }
 }
