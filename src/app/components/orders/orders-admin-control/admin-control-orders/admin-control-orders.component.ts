@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrderService } from 'src/services/order/order.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { OrderService } from 'src/services/order/order.service';
 })
 export class AdminControlOrdersComponent implements OnInit {
 
-  constructor(private ordersServ:OrderService) { }
+  // inject router in ctor
+  constructor(private ordersServ:OrderService,private router:Router) { }
 
 
   subscriber;
@@ -25,6 +27,7 @@ export class AdminControlOrdersComponent implements OnInit {
       },
       (err)=>{
 
+        this.router.navigateByUrl('/admin/login')
         console.log(err)
       },
       ()=>{

@@ -10,7 +10,7 @@ export class UserService {
 
    }
 
-   private baseUrl='http://localhost:3000/api/user';
+   private baseUrl='https://rafai3-backend.herokuapp.com/api/user';
 
    register(_signUpDetails){
 
@@ -22,6 +22,30 @@ export class UserService {
 
     return this._httpClient.post(this.baseUrl+'/login',_signInDetails);
    }
+
+
+
+   getToken(){
+
+    let token=localStorage.getItem('rafai3Token')
+   return token;
+  }
+
+  ///get user details
+  getUserDetails(){
+
+    return this._httpClient.get(this.baseUrl,{headers:{Authorization:localStorage.getItem('rafai3Token')}});
+  }
+
+  //////change password
+  changePasswordUse(_oldPass,_newPass){
+    return this._httpClient.patch(this.baseUrl+'/changePassword',{password:_oldPass ,newPassword: _newPass},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
+  }
+
+// if user want to edit his details
+  editUserDetails(_changeValue){
+    return this._httpClient.patch(this.baseUrl+'/update',_changeValue,{headers:{Authorization:localStorage.getItem('rafai3Token')}});
+  }
 
 
 }

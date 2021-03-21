@@ -12,11 +12,11 @@ export class OrderService {
 
   }
 
-  private baseUrl:string='http://localhost:3000/api/order';
+  private baseUrl:string='https://rafai3-backend.herokuapp.com/api/order';
 
-  private cartUrl:string='http://localhost:3000/api/cart'
+  private cartUrl:string='https://rafai3-backend.herokuapp.com/api/cart'
 
-  private productUrl:string='http://localhost:3000/api/product';
+  private productUrl:string='https://rafai3-backend.herokuapp.com/api/product';
 
   getToken(){
 
@@ -86,6 +86,12 @@ export class OrderService {
     return this._httpClient.get(this.baseUrl+'?startDate='+_searchDetails.startDate+'&endDate='+_searchDetails.endDate,{headers:{Authorization:this.getToken()}})
   }
 
+
+  // user delete order if it is pending .. this logic made in backend
+  userDeleteOrder(_orderId){
+
+    return this._httpClient.delete(this.baseUrl+'/'+_orderId,{headers:{Authorization:this.getToken()}})
+  }
 
   // getAllOrders(){
 

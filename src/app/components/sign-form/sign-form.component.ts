@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/services/user/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/services/user/user.service';
 export class SignFormComponent implements OnInit {
 
   // dont forget after make connections with other component write ,private router:Router in param
-  constructor(private userServ:UserService) { }
+  constructor(private userServ:UserService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -29,10 +30,10 @@ export class SignFormComponent implements OnInit {
   // after successfully registered hit login to login with created user
   navigateLogin() {
 
-    // this.router.navigate(['user/login'])
-    //   .then(() => {
-    //     window.location.reload();
-    //   });
+    this.router.navigate(['user/login'])
+      .then(() => {
+        window.location.reload();
+      });
   }
 
   registerForm = new FormGroup({
@@ -96,7 +97,7 @@ export class SignFormComponent implements OnInit {
         this.registered = "Registered successfully "
 
 
-
+        
       }, (err) => {
 
         console.log(err['error']);

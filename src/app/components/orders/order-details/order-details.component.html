@@ -1,8 +1,8 @@
 <div *ngIf="orderDetails" class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
     <div class="text-uppercase">
-        <p>Order detail</p>
+        <p class="h2">Order detail</p>
     </div>
-    <div class="h4">Created at {{createdAt}}</div>
+    <div class="h3">Created at {{createdAt}}</div>
     <div class="pt-1">
         <p>Order #{{orderDetails._id}} is currently<b class="text-dark"> {{orderDetails.status}}</b></p>
     </div>
@@ -13,13 +13,13 @@
         <table class="table table-borderless">
             <thead>
                 <tr class="text-uppercase text-muted">
-                    <th scope="col">product</th>
-                    <th scope="col" class="text-right">total</th>
+                    <th scope="col"><h5>product</h5></th>
+                    <th scope="col" class="text-right"><h5>total</h5></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">all products ordered are {{orderDetails.totalquantity}} products</th>
+                    <th scope="row"> all products ordered are {{orderDetails.totalquantity}} products</th>
                     <td class="text-right"><b>${{orderDetails.totalprice}}</b></td>
                 </tr>
             </tbody>
@@ -44,5 +44,17 @@
         <div class="ml-auto"> <label>{{orderDetails.statusmessage}}</label> </div>
     </div>
 
-   
+
+    <div *ngIf="checkAdmin" class="text-center">
+        
+        <strong class="mx-3">Reason for rejection:</strong>
+        <div style="display: inline;" class="text-center"><input #reject class="shadow p-3 mb-5 bg-white rounded"  type="text"></div>
+        <br>
+        <strong class="mx-3"> Order will be delivered at date </strong>
+        <div style="display: inline;" class="text-center"><input #accept class="shadow p-3 mb-5 bg-white rounded"  type="date"></div>
+        <h5 class="text-danger text-center">{{messageIncluded}}</h5>
+        <input (click)="rejectOrder(reject.value)" type="button" value="Reject" class="btn btn-danger p-3 mx-2">
+        <input (click)="acceptOrder(accept.value)" type="button" value="Accept" class="btn btn-success p-3 mx-2">
+    </div>
 </div>
+

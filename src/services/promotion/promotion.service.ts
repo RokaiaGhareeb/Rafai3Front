@@ -11,7 +11,7 @@ export class PromotionService {
 
   }
 
-  private baseUrl='http://localhost:3000/api/promotion'
+  private baseUrl='https://rafai3-backend.herokuapp.com/api/promotion'
 
   getToken(){
 
