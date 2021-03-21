@@ -1,10 +1,15 @@
 <body class="align">
   <div class="grid">
-    <form [formGroup]="registerForm" #registerUser>
+    <form>
       <div class="registration_form">
         <h2>registration</h2>
         <!-- User Name-->
-        <form class="form" method="post">
+        <form
+          class="form"
+          method="post"
+          [formGroup]="registerForm"
+          #registerUser
+        >
           <div class="form-group">
             <input
               class="input form-control"
@@ -273,10 +278,10 @@
           <div class="form-group">
             <input
               class="input form-control"
-              name="password"
-              id="password"
+              
+              
               placeholder="Phone Number (optional)"
-              #phone
+              #phonetype
               type="number"
             /><br />
           </div>
