@@ -1,0 +1,77 @@
+<div class="text-center border-blue" *ngIf="userProfile">
+
+    <h1 class=" my-5">
+         Edit your profile 
+    </h1>
+
+    <div class="alert alert-primary w-50 m-auto">
+
+        <form [formGroup]="profileForm">
+
+            <div class="form-group">
+                <label for="firstname">
+                    <h4> firstname </h4>
+                </label>
+                <input class="form-control" #firstname type="text" name="" formControlName="firstname">
+                <div name="validations" *ngIf="profileForm.invalid">
+                    <span class="text-danger" *ngIf="profileForm.controls.firstname.errors?.required">firstname is
+                        required</span>
+                    <span class="text-danger" *ngIf="profileForm.controls.firstname.errors?.maxlength">firstname
+                        characters
+                        exceeded maximum length of 15</span>
+                    <span class="text-danger" *ngIf="profileForm.controls.firstname.errors?.minlength">firstname
+                        characters
+                        are less than 3 characters</span>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname">
+                    <h4> lastname </h4>
+                </label>
+                <input class="form-control" #lastname type="text" name="" formControlName="lastname">
+                <div name="validations" *ngIf="profileForm.invalid">
+                    <span class="text-danger" *ngIf="profileForm.controls.lastname.errors?.required">lastname is
+                        required</span>
+                    <span class="text-danger" *ngIf="profileForm.controls.lastname.errors?.maxlength">lastname
+                        characters
+                        exceeded maximum length of 15</span>
+                    <span class="text-danger" *ngIf="profileForm.controls.lastname.errors?.minlength">lastname
+                        characters
+                        are less than 3 characters</span>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">
+                    <h4> age </h4>
+                </label>
+                <input class="form-control" #age type="text" name="" formControlName="age">
+                <div name="validations" *ngIf="profileForm.invalid">
+                    <span class="text-danger" *ngIf="profileForm.controls.age.errors?.required">age is
+                        required</span>
+                    <span class="text-danger" *ngIf="profileForm.controls.age.errors?.max">age shouldn't be more than
+                        100</span>
+                    <span class="text-danger" *ngIf="profileForm.controls.age.errors?.min">age shouldn't be less than
+                        8</span>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pho  ne">
+                    <h4> phone </h4>
+                </label>
+                <input class="form-control" #phone type="text" name="" formControlName="phone">
+            </div>
+
+            <input value="Back to profile" type="button" class="btn btn-primary" name="backBtn" (click)="navigateProfile()">
+
+            <input [disabled]="profileForm.invalid" type="button" class="btn btn-danger mx-3" name="editBtn"
+                value="confirm edit" (click)="confirm(firstname,lastname,age,phone)" (click)="navigateProfile()">
+
+        </form>
+
+    </div>
+
+
+</div>

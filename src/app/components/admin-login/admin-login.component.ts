@@ -6,12 +6,12 @@ import { AdminService } from 'src/services/admin/admin.service';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.css']
+  styleUrls: ['./admin-login.component.css'],
 })
 export class AdminLoginComponent implements OnInit {
 
   // inject admin service
-  constructor(private adminServ:AdminService,private router:Router) { 
+  constructor(private adminServ:AdminService,private router:Router) {
 
   }
 
@@ -64,7 +64,7 @@ export class AdminLoginComponent implements OnInit {
         this.faliedLogin = err['error'].error;
       },
       () => {
- 
+
         this.subscriber.unsubscribe();
       }
 

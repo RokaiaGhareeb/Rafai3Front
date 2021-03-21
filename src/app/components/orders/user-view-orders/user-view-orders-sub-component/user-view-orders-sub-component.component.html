@@ -29,6 +29,10 @@
  
             </table>
 
+            <div class="text-center">
+              <h4 class="text-danger" [ngClass]="{'text-success': confirmCancel === 'Order is deleted'}">{{confirmCancel}}</h4>
+              <input (click)="cancelOrder()" class="btn btn-danger"  type="button" value="Cancel order" name="cancelOrder" id="cancel_order">
+            </div>
           </div>
    
         </div>

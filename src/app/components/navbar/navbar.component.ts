@@ -111,4 +111,10 @@ export class NavbarComponent implements OnInit {
   adminDetails;
 
 
+  adminPage(){
+
+    this.navRouter.navigateByUrl('/admin')
+  }
+
+
 }
