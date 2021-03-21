@@ -39,17 +39,22 @@ import { EditUserDetailsComponent } from './components/user-edit-details/edit-us
 
 
 const appRoutes : Routes = [
-  {path:'', redirectTo:'product/kitchen', pathMatch:'full'},
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'home', component:HomeComponent},
+  {path:'user/login',pathMatch:'full',component:LoginFormComponent},
+  {path:'user/register',pathMatch:'full',component:SignFormComponent},
+  {path:'user/profile',pathMatch:'full',component:ProfileComponent},
+
+  {path:'user/product', redirectTo:'user/product/kitchen', pathMatch:'full'},
+
   {
-    path:'product',
+    path:'user/product',
     component: ProductCategoryComponent,
     children: [
       {path: ':filter', component:ProductCardComponent},
     ],
   },
-  {path:'user/login',pathMatch:'full',component:LoginFormComponent},
-  {path:'user/register',pathMatch:'full',component:SignFormComponent},
-  {path:'user/profile',pathMatch:'full',component:ProfileComponent},
+
   {path:'authenticationFailed',pathMatch:'full',component:AuthenticationFailedComponent},
   {path:'user/cart',pathMatch:'full',component:CartComponent},
   {path:'user/order',pathMatch:'full',component:UserViewOrdersComponent},
