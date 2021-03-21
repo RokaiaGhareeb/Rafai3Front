@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-category',
@@ -8,7 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCategoryComponent implements OnInit {
 
   categoryFilter;
-  constructor() {
+  nameFilter;
+  constructor(private productService: ProductService) {
   }
   ngOnInit(): void {
 
@@ -16,5 +18,9 @@ export class ProductCategoryComponent implements OnInit {
 
   onEmitt(value){
     this.categoryFilter = value;
+  }
+
+  onTitleEmit(title){
+    this.productService.onNameFilterChanged(title);
   }
 }

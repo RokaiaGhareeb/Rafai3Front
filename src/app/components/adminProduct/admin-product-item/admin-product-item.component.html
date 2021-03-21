@@ -8,6 +8,7 @@ style="background-color: rgb(216,172,156);"
   <div class='col-8 d-flex justify-content-between align-items-center'>
     <div class='d-flex justify-content-around align-items-center w-100' >
       <div class="mr-2" style="font-size: 2rem; color: rgb(239,217,209); max-width: 75%; min-width: 75%">{{product.details}}</div>
+      <div style="font-size: 2rem; color: rgb(239,217,209);">{{product.category}} $</div>
       <div style="font-size: 2rem; color: rgb(239,217,209);">{{product.price}} $</div>
     </div>
   </div>
@@ -55,7 +56,7 @@ style="background-color: rgb(216,172,156);"
             <div class='row w-50 flex-column justify-content-center align-items-center'>
               <div class='d-flex flex-column justify-content-center align-items-center mb-3'>
                 <img [src]='product.imageUrl' class='img-thumbnail mb-2 bg-transparent' style="width: 15rem; height: 20rem;">
-                <input class='form-control-file' placeholder="image" type="file" (change)='onImageSelected($event.target)' formControlName='image'/>
+                <input class='form-control-file' placeholder="image" type="file" (change)='onImageSelected($event.target)'/>
               </div>
               <input required class='form-control mb-3 form-control-lg' placeholder="title" type="text" minlength="5" formControlName='title' />
               <input required class='form-control mb-3 form-control-lg' placeholder="details" type="text" minlength="10" formControlName='details' />

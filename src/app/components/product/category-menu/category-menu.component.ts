@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-category-menu',
@@ -7,9 +8,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 
 export class CategoryMenuComponent implements OnInit {
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   @Output() filterEmitt : EventEmitter<String> = new EventEmitter()
+
   ngOnInit(): void {
     this.onClickMenu('kitchen');
   }
@@ -18,4 +20,7 @@ export class CategoryMenuComponent implements OnInit {
     this.filterEmitt.emit(filter);
   }
 
+  onFiltering(title){
+    //this.productService.nameFilter = title;
+  }
 }
