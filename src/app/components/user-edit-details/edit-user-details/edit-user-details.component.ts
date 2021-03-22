@@ -32,9 +32,9 @@ export class EditUserDetailsComponent implements OnInit {
       (err) => {
         console.log(err)
 
-     
+
           this.router.navigateByUrl('authenticationFailed')
-        
+
       },
       ()=>{
 
@@ -100,9 +100,24 @@ export class EditUserDetailsComponent implements OnInit {
 
   }
 
+  image;
+  newImage  = new FormData();
+  onImageSelected(input) {
+    if (input.files && input.files[0]) {
+      console.log(input.files[0]);
+      this.newImage.append('image', input.files[0]);
+      const reader = new FileReader();
+      reader.readAsDataURL(input.files[0]);
+      reader.onload = (_event) => {
+        this.image = reader.result;
+        console.log(this.image);
+      };
+    }
+  }
 
-  
-
+  imageUpload(){
+    this.userService.imageChange(this.newImage).subscribe((res)=>{console.log(res)}, (err)=>{console.log(err)});
+  }
 }
 
 // to validate phones  custom validator
