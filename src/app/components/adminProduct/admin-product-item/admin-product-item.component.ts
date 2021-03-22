@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/services/product.service';
 
 @Component({
   selector: 'app-admin-product-item',

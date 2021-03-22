@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/services/product.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
