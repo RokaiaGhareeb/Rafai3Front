@@ -99,7 +99,7 @@ export class AdminProductComponent implements OnInit {
     this.unsupscriber = this.productService.add(this.newProduct).subscribe(
       (res) => {
         console.log(res);
-        this.products.push(res);
+        this.showedData.push(res);
         this._snackBar.open('Product added successfully.', '', {
           duration: 4000,
           verticalPosition: 'bottom',

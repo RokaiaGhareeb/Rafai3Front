@@ -99,6 +99,7 @@ export class AdminProductItemComponent implements OnInit {
       .subscribe(
         (res) => {
           console.log(res);
+          this.getAllProductS();
           this._snackBar.open('Product edited successfully.', '', {
             duration: 4000,
             verticalPosition: 'bottom',
@@ -124,7 +125,11 @@ export class AdminProductItemComponent implements OnInit {
         }
       );
     this.oldProductForm.reset();
-    unsupscriber = this.productService.getAll().subscribe(
+
+  }
+
+  getAllProductS(){
+    let unsupscriber = this.productService.getAll().subscribe(
       (products) => {
         this.products = products;
       },

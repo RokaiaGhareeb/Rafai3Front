@@ -50,6 +50,7 @@ export class UserService {
   }
 
   imageChange(changedImage){
+    console.log(changedImage)
     return this._httpClient.patch(this.baseUrl+'/updateImage',changedImage,{headers:{Authorization:localStorage.getItem('rafai3Token')}});
   }
 }
