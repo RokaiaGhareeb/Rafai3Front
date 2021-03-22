@@ -16,6 +16,11 @@ body {
     color: #d8ac9c;
 }
 
+::placeholder {
+    color: #f39189;
+    font-weight: bold;
+}
+
 h1 {
     color: #999b84;
     text-transform: uppercase;
