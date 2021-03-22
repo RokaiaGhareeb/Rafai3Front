@@ -15,7 +15,8 @@ export class AdminPromotionComponent implements OnInit {
   productPromoted;
   ngOnInit(): void {
 
-    
+
+
     let unsubscriber = this.promotionService.getAll().subscribe(
       (res)=>{
         console.log(res);
@@ -28,17 +29,19 @@ export class AdminPromotionComponent implements OnInit {
     );
   }
 
-  getPromotedProductDetails(productId){
-   let unsubscriber = this.productService.get(productId).subscribe(
-      (res)=>{
-       this.productPromoted = res;
-      },
-      (err)=>{
-        console.log(err);
-      },
-      ()=>{unsubscriber.unsubscribe()}
-    );
-  }
+  // getPromotedProductDetails(promotion){
+  //   console.log(promotion[0])
+  //   console.log(promotion[0]['productId'])
+  //  let unsubscriber = this.productService.get(promotion[0]['productId']).subscribe(
+  //     (res)=>{
+  //      this.productPromoted = res;
+  //     },
+  //     (err)=>{
+  //       console.log(err);
+  //     },
+  //     ()=>{unsubscriber.unsubscribe()}
+  //   );
+  // }
 
   onDeletePromotion(promotion) {
     let unsubscriber = this.promotionService.deletePromotion(promotion._id).subscribe(
@@ -55,4 +58,23 @@ export class AdminPromotionComponent implements OnInit {
       ()=>{unsubscriber.unsubscribe()}
     );
   }
+  product ;
+  captureProduct(value) {
+    console.log(value.productId)
+    let unsubscriber = this.productService.get(value.productId).subscribe((res)=>{
+      this.product = res['product'];
+      document.getElementById('closeModalButton9').click();
+      console.log(this.product);
+    },
+    (err) => {
+      console.log(err);
+    },
+    ()=>{
+      unsubscriber.unsubscribe();
+    }
+    )
+  }
+
+
+
 }
