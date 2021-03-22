@@ -146,14 +146,14 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
       </div>
       <div
         *ngIf="userDetails || adminDetails"
-        class="form-inline my-2 my-lg-0 text-primary"
+        class="form-inline my-2 my-lg-0 "
       >
-        <span *ngIf="userDetails">Welcome</span>
-        <span *ngIf="userDetails" class="text-danger mx-4"
+        <span *ngIf="userDetails" style="color: white;">Welcome</span>
+        <span style="color: rgb(239,217,209);" *ngIf="userDetails" class=" mx-4"
           >{{ userDetails.firstname }} {{ userDetails.lastname }}</span
         >
         <span *ngIf="adminDetails"> Admin</span>
-        <span *ngIf="adminDetails" class="text-danger mx-4"
+        <span style="color: rgb(239,217,209);" *ngIf="adminDetails" class=" mx-4"
           >{{ adminDetails.firstname }} {{ adminDetails.lastname }}</span
         >
         <input
