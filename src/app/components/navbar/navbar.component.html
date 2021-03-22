@@ -25,7 +25,7 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
           <a class="nav-link active" href="#">Cart</a>
         </li>
       </ul>
-      
+
       <button
         class="btn btn-outline-success"
         style="color: white; border: 2px solid white"
@@ -53,23 +53,10 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         </li>
 
         <li class="nav-item active">
-<<<<<<< HEAD
           <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/product"  >Products</a>
-=======
-          <a
-            *ngIf="checkIfAdmin"
-            class="nav-link active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="text-danger"
-            routerLink="product"
-            class="nav-link"
-            >All products</a
-          >
->>>>>>> 47d0819333d75e5e50ccecae90a4c1c6ca59b6d4
         </li>
         <li class="nav-item active">
-<<<<<<< HEAD
           <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/order" >Orders</a>
         </li>
@@ -82,39 +69,6 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         <li class="nav-item dropdown">
           <a *ngIf="!checkIfAdmin" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="user/product"
             class="nav-link">our products</a>
-=======
-          <a
-            *ngIf="checkIfAdmin"
-            class="nav-link active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="text-danger"
-            routerLink=""
-            class="nav-link"
-            >Add product</a
-          >
-        </li>
-        <li class="nav-item active">
-          <a
-            *ngIf="checkIfAdmin"
-            class="nav-link active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="text-danger"
-            routerLink=""
-            class="nav-link"
-            >Remove product</a
-          >
-        </li>
-        <li class="nav-item active">
-          <a
-            *ngIf="checkIfAdmin"
-            class="nav-link active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="text-danger"
-            routerLink="admin/order"
-            class="nav-link"
-            >Orders</a
-          >
->>>>>>> 47d0819333d75e5e50ccecae90a4c1c6ca59b6d4
         </li>
 
         <li class="nav-item active" *ngIf="userDetails" (click)="navigateOurProducts()">
