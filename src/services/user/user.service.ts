@@ -39,6 +39,8 @@ export class UserService {
 
   //////change password
   changePasswordUse(_oldPass,_newPass){
+
+    console.log({password:_oldPass ,newPassword: _newPass});
     return this._httpClient.patch(this.baseUrl+'/changePassword',{password:_oldPass ,newPassword: _newPass},{headers:{Authorization:localStorage.getItem('rafai3Token')}});
   }
 

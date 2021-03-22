@@ -65,7 +65,7 @@ subscriber;
 
       
       // subscribe to subscriber returned from function of user service made
-    this.subscriber=  this.userService.changePasswordUse( _newPass.value, _oldPass.value ).subscribe(
+    this.subscriber=  this.userService.changePasswordUse( _oldPass.value , _newPass.value).subscribe(
 
         (data:any) => {
           
@@ -80,7 +80,7 @@ subscriber;
 
           console.log(data)
 
-          localStorage.removeItem('todoAppToken');
+          localStorage.removeItem('rafai3Token');
           // navigate to edit profile page again after user confirmed changed password
           this.router.navigate(['user/login']).then(
             () => {
