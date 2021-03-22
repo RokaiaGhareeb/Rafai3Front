@@ -63,7 +63,7 @@ subscriber;
 
     if (this.checkConfirmPass) {
 
-      console.log(_oldPass.value,_newPass.value)
+      
       // subscribe to subscriber returned from function of user service made
     this.subscriber=  this.userService.changePasswordUse( _newPass.value, _oldPass.value ).subscribe(
 
