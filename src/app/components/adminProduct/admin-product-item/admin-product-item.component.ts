@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from 'src/services/product.service';
+import { PromotionService } from 'src/services/promotion/promotion.service';
 
 @Component({
   selector: 'app-admin-product-item',
@@ -11,7 +12,8 @@ import { ProductService } from 'src/services/product.service';
 export class AdminProductItemComponent implements OnInit {
   constructor(
     private productService: ProductService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private promotionService: PromotionService
   ) {}
 
   product = {
@@ -137,6 +139,43 @@ export class AdminProductItemComponent implements OnInit {
       () => {
         unsupscriber.unsubscribe();
       }
+    );
+  }
+
+  promoteProductForm = new FormGroup({
+    promotion: new FormControl(),
+    newprice: new FormControl(),
+  });
+
+  onPromoteProduct(){
+    console.log(this.promoteProductForm);
+    let unsupscriber = this.promotionService.postPromotion(this.product._id,
+      {
+        promotion:this.promoteProductForm.value['promotion'],
+        newprice:this.promoteProductForm.value['newprice']
+    }).subscribe(
+      (res)=>{
+        console.log(res);
+        this._snackBar.open('Product promoted successfully.', '', {
+          duration: 4000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center',
+          panelClass: ['snackBar'],
+        });
+        document.getElementById('closeModalButton4').click();
+      },
+      (err)=>{
+        console.log(err);
+        this._snackBar.open('Product was not promoted, something wrong happend.', '', {
+          duration: 4000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center',
+          panelClass: ['snackBar'],
+        });
+        document.getElementById('closeModalButton4').click();
+
+      },
+      ()=>{unsupscriber.unsubscribe()}
     );
   }
 }

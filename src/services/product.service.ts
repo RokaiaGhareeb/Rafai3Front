@@ -25,6 +25,10 @@ export class ProductService {
     return token;
   }
 
+  get(id){
+    return this.http.get(baseURL + id);
+  }
+
   getOfCategory(filter) {
     return this.http.get(baseURL + 'filter/' + filter);
   }
