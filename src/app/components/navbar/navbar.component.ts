@@ -125,7 +125,7 @@ export class NavbarComponent implements OnInit {
 
   navigateAdminRoute(){
 
-    this.navRouter.navigateByUrl('admin')
+    this.navRouter.navigateByUrl('admin/login')
   }
 
 

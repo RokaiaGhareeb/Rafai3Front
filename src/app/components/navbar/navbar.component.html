@@ -66,10 +66,7 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
             routerLink="admin/promotions"  >promotions</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a *ngIf="!checkIfAdmin" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="user/product"
-            class="nav-link">our products</a>
-        </li>
+      
 
         <li class="nav-item active" *ngIf="userDetails" (click)="navigateOurProducts()">
           <a

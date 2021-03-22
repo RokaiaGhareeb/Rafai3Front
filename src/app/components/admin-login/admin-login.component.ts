@@ -15,7 +15,35 @@ export class AdminLoginComponent implements OnInit {
 
   }
 
+  
+  adminDetails;
+
   ngOnInit(): void {
+
+    this.subscriber= this.adminServ.getDetails().subscribe(
+
+      (data)=>{
+  
+        this.adminDetails=data;
+
+        this.router.navigateByUrl('admin/order').then(
+          ()=>{
+            location.reload();
+          }
+        )
+      },
+      (err)=>{
+  
+        this.router.navigateByUrl('/admin/login');
+  
+      },
+      ()=>{
+  
+        this.subscriber.unsubscribe();
+      }
+    )
+
+
   }
 
   ngOnDestroy(): void {
