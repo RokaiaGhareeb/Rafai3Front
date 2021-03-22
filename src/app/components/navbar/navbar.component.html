@@ -40,7 +40,7 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
 
 <div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-        <a class="navbar-brand" style="color: rgb(243, 204, 190)">Rafai3</a>
+        <a class="navbar-brand" style="color: rgb(243, 204, 190)" (click)="navigateAdminRoute()">Rafai3</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,23 +53,20 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         </li>
 
         <li class="nav-item active">
-          <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
+          <a *ngIf="checkIfAdmin&&adminDetails" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/product"  >Products</a>
         </li>
         <li class="nav-item active">
-          <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
+          <a *ngIf="checkIfAdmin&&adminDetails" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/order" >Orders</a>
         </li>
 
         <li class="nav-item active">
-          <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
+          <a *ngIf="checkIfAdmin&&adminDetails" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/promotions"  >promotions</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a *ngIf="!checkIfAdmin" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="text-danger" routerLink="user/product"
-            class="nav-link">our products</a>
-        </li>
+      
 
         <li class="nav-item active" *ngIf="userDetails" (click)="navigateOurProducts()">
           <a

@@ -14,6 +14,8 @@ export class AdminPromotionComponent implements OnInit {
   promotions;
   productPromoted;
   ngOnInit(): void {
+
+    
     let unsubscriber = this.promotionService.getAll().subscribe(
       (res)=>{
         console.log(res);

@@ -81,7 +81,12 @@ export class NavbarComponent implements OnInit {
     this.userDetails=null;
     this.adminDetails=null;
 
-    this.navRouter.navigateByUrl('');
+    this.navRouter.navigateByUrl('home').then(
+
+      ()=>{
+        location.reload();
+      }
+    )
   }
 
 
@@ -120,6 +125,12 @@ export class NavbarComponent implements OnInit {
   navigateOurProducts(){
 
     this.navRouter.navigateByUrl('user/product')
+  }
+
+
+  navigateAdminRoute(){
+
+    this.navRouter.navigateByUrl('admin/login')
   }
 
 
