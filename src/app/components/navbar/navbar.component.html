@@ -97,13 +97,10 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
           >
         </li>
 
-        <li class="nav-item active" *ngIf="userDetails">
+        <li class="nav-item active" *ngIf="userDetails" (click)="navigateOurProducts()">
           <a
             id="product"
             *ngIf="!checkIfAdmin"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="text-danger"
-            routerLink="product"
             class="nav-link"
             >our products</a
           >

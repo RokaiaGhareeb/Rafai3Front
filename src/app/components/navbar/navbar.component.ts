@@ -117,4 +117,10 @@ export class NavbarComponent implements OnInit {
   }
 
 
+  navigateOurProducts(){
+
+    this.navRouter.navigateByUrl('user/product')
+  }
+
+
 }
