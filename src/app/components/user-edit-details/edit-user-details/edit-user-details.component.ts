@@ -119,7 +119,7 @@ export class EditUserDetailsComponent implements OnInit {
   }
 
   imageUpload() {
-    this.userService.imageChange(this.newImage).subscribe(
+    this.subscriber=this.userService.imageChange(this.newImage).subscribe(
       (res) => {
         console.log(res);
       },
