@@ -24,6 +24,8 @@ export class CartComponent implements OnInit {
 
   continueShoping(){
     
+    this.router.navigateByUrl('home')
+
   }
 
   ngOnInit(): void {
