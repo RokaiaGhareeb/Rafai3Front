@@ -97,19 +97,16 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
           >
         </li>
 
-        <li class="nav-item active">
+        <li class="nav-item active" *ngIf="userDetails" (click)="navigateOurProducts()">
           <a
             id="product"
             *ngIf="!checkIfAdmin"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="text-danger"
-            routerLink="product"
             class="nav-link"
             >our products</a
           >
         </li>
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" *ngIf="userDetails">
           <a
             *ngIf="!checkIfAdmin"
             class="nav-link dropdown-toggle"
@@ -136,7 +133,7 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
           </div>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="userDetails">
           <a
             *ngIf="!checkIfAdmin"
             [routerLinkActiveOptions]="{ exact: true }"
