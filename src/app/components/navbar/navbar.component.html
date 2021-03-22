@@ -53,16 +53,16 @@ class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="ba
         </li>
 
         <li class="nav-item active">
-          <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
+          <a *ngIf="checkIfAdmin&&adminDetails" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/product"  >Products</a>
         </li>
         <li class="nav-item active">
-          <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
+          <a *ngIf="checkIfAdmin&&adminDetails" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/order" >Orders</a>
         </li>
 
         <li class="nav-item active">
-          <a *ngIf="checkIfAdmin" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
+          <a *ngIf="checkIfAdmin&&adminDetails" class="nav-link active category-menu-item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="category-menu-item-selected"
             routerLink="admin/promotions"  >promotions</a>
         </li>
 
