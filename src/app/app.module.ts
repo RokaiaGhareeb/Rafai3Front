@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PromotionCardComponent } from './components/promotion-card/promotion-card.component';
-import { PromotionDetailsComponent } from './components/promotion-details/promotion-details.component';
 import { ProductCardComponent } from './components/product/product-card/product-card.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -36,6 +35,7 @@ import { AdminControlOrdersComponent } from './components/orders/orders-admin-co
 import { AdminControlOrdersSubComponentComponent } from './components/orders/orders-admin-control/admin-control-orders-sub-component/admin-control-orders-sub-component.component';
 import { EditPasswordComponent } from './components/user-edit-details/edit-password/edit-password.component';
 import { EditUserDetailsComponent } from './components/user-edit-details/edit-user-details/edit-user-details.component';
+import { AdminPromotionComponent } from './components/admin-promotion/admin-promotion/admin-promotion.component';
 
 
 const appRoutes : Routes = [
@@ -66,6 +66,7 @@ const appRoutes : Routes = [
   {path:'admin/order/:id',component:OrderDetailsComponent},
   {path:'admin/login',pathMatch:'full',component:AdminLoginComponent},
   {path:'admin/product',pathMatch:'full',component:AdminProductComponent},
+  {path:'admin/promotions',pathMatch:'full',component:AdminPromotionComponent},
 
 
 ];
@@ -75,7 +76,6 @@ const appRoutes : Routes = [
     AppComponent,
     NavbarComponent,
     PromotionCardComponent,
-    PromotionDetailsComponent,
     ProductCardComponent,
     CartItemComponent,
     CartComponent,
@@ -97,7 +97,8 @@ const appRoutes : Routes = [
     AdminControlOrdersComponent,
     AdminControlOrdersSubComponentComponent,
     EditPasswordComponent,
-    EditUserDetailsComponent
+    EditUserDetailsComponent,
+    AdminPromotionComponent
   ],
   imports: [
     BrowserModule,
