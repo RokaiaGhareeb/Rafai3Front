@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrderService } from 'src/services/order/order.service';
 
 @Component({
@@ -8,14 +9,14 @@ import { OrderService } from 'src/services/order/order.service';
 })
 export class UserViewOrdersSubComponentComponent implements OnInit {
 
-  constructor(private orderServ:OrderService) { }
+  constructor(private orderServ:OrderService,private router:Router) { }
 
   ngOnInit(): void {
 
-    console.log(this.orderDetails)
+  
 
     this.createdAt=this.orderDetails['createdAt'].split('T')[0]
-    console.log(this.createdAt)
+ 
   }
 
   @Input() orderDetails;
@@ -35,7 +36,13 @@ export class UserViewOrdersSubComponentComponent implements OnInit {
         this.confirmCancel='Order is deleted'
       },
       (err)=>{
- 
+        
+        
+        if(err['error'].error=="deletedOrder is not defined"){
+
+         return this.confirmCancel='Order is deleted'
+        }
+
          this.confirmCancel=err['error'].error
       }
     )

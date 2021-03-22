@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
 
     (data)=>{
 
-      console.log(data)
+      
       this.userDetails=data;
     },
     (err)=>{
