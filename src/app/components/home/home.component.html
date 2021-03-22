@@ -11,10 +11,10 @@
         <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Rafai3</a>
-  
+
           <form class="d-flex">
             <div class="burger-icon"></div>
-  
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -30,7 +30,7 @@
                   <a class="nav-link active" href="#">Cart</a>
                 </li>
               </ul>
-  
+
               <button
                 class="btn btn-outline-success"
                 style="color: white; border: 2px solid white"
@@ -112,6 +112,26 @@
             </div>
         </div>
     </div>
+    <h1 class='text-center mt-5 mb-5'>You can find a lot of Promotions</h1>
+    <div  id='h1' class='row pb-5 justify-content-center align-content-center' *ngIf="products">
+    <!--promotion section-->
+    <div class='col-lg-3 col-md-6 mb-4 mb-lg-0 m-md-3 m-3' *ngFor="let prom of products; let i = index">
+
+    <div  class="card rounded" style="width: 18rem; height: fit-content;">
+      <img class="card-img-top rounded" [src]='prom.imageUrl' alt="Card image cap">
+      <div class="card-body" style="background-color: rgb(153,155,132);">
+        <p style="color: rgb(239,217,209); font-size: 2rem" class="card-title">{{prom.title}}</p>
+        <p style="color: rgb(239,217,209);" class="card-text">{{prom.details}}</p>
+        <p style="color: rgb(216,172,156); font-weight: bold;font-size: 2rem; text-decoration: underline;" class="card-text text-center">{{promotions[i].promotion}}</p>
+        <div class='d-flex justify-content-around align-content-center'>
+          <p style="color: red; text-decoration: line-through;" class="card-text">{{prom.price}}$</p>
+          <p style="color: rgb(239,217,209);" class="card-text">{{promotions[i].newprice}}$</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  <!--promotion section-->
     <!--  https://giphy.com/gifs/kawaii-kitchen-l0HlPZiLi4qr2bmMw footer-->
     <!-- Site footer -->
 
